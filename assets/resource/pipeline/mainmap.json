@@ -1,0 +1,222 @@
+{
+    "返回到上一级": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_back_small.png",
+                    "btn_back_small_blue.png"
+                ],
+                "roi": [
+                    0,
+                    1,
+                    136,
+                    126
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "返回到上一级"
+    },
+    "退回到主界面": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            {
+                "name": "返回到上一级",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "close活动限时卡池概率提升",
+                "jump_back": true
+            },
+            {
+                "name": "close活动弹窗",
+                "jump_back": true
+            },
+            {
+                "name": "close恭喜获得",
+                "jump_back": true
+            },
+            {
+                "name": "退出签到界面",
+                "jump_back": true
+            },
+            "已在主界面"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "已在主界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "笔记"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "关闭当前界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_close_small.png"
+                ],
+                "roi": [
+                    0,
+                    1,
+                    136,
+                    126
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "已在抽卡界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_draw_10_times.png"
+                ],
+                "roi": [
+                    998,
+                    535,
+                    260,
+                    138
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "日常领取": {
+        "recognition": {
+            "type": "DirectHit",
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": ["点击日常",
+            {"name":"退回到主界面","jump_back": true}],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "点击日常": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template" : ["daily.png"],
+                "roi" : [162,0,145,139]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["点击_一键领取",{"name": "close恭喜获得","jump_back": true}],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "点击_一键领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template" : ["claim_reward_daily.png"],
+                "roi" : [1153,565,127,155]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },"next": ["日常领取_点击空白处继续"],
+        "pre_delay": 800,
+        "post_delay": 400,
+    },
+
+
+    "日常领取_点击空白处继续": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击空白处"
+                ],"roi" : [510,612,284,64]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["点击_一键领取2",],
+        "pre_delay": 300,
+        "post_delay": 300
+    },    
+    "点击_一键领取2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template" : ["claim_reward_daily.png"],
+                "roi" : [1153,565,127,155]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },"next": ["日常领取_点击空白处继续2"],
+        "pre_delay": 800,
+        "post_delay": 400,
+        "focus": "日常结束，请确认奖励"
+    },
+    "日常领取_点击空白处继续2": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击空白处"
+                ],"roi" : [510,612,284,64]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 300,
+        "post_delay": 300
+    },   
+}

@@ -1,0 +1,384 @@
+{
+    "速写启动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "速写",
+            {
+                "name": "校园",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            }
+        ]
+    },
+    "速写": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "速写"
+                ],
+                "roi": [
+                    697,
+                    559,
+                    577,
+                    161
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "速写_选择一个地方"
+        ]
+    },
+    "速写_选择一个地方": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "alkaid/bubble_alkaid.png",
+                    "clarence/bubble_clarence.png",
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "速写_一键收集"
+        ]
+    },
+    "速写_开始": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "开始"
+                ],
+                "roi": [
+                    529,
+                    452,
+                    226,
+                    137
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "灵感"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+    },
+    "速写_一键收集": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "键收集"
+                ],
+                "roi": [
+                    1016,
+                    46,
+                    259,
+                    141
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "速写_开始"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+    },
+    "灵感": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "灵感"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "灵感_音乐演奏",
+            "灵感_架子鼓"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "确定灵感绘制": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected" : ["确定"],
+                "roi" : [697,556,357,164]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["速写结果"],
+        "pre_delay": 600,
+        "post_delay": 5000
+    }, 
+     "速写结果": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template" : "srcatch_result.png",
+                "roi" : [511,103,259,145]
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+            
+        },
+        "next": [
+            "速写赠送",
+            {"name": "点击屏幕退出","jump_back": true}
+        ]
+    },
+     "速写赠送": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected" : "速写赠送",
+                "roi" : [404,46,484,243]
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+            
+        },
+        "next": [
+            "确定速写赠送"
+        ]
+    },
+     "确定速写赠送": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template" : "give.png",
+                "roi" : [539,454,208,138]
+            }
+        },
+        "action": {
+            "type": "Click"
+            
+        },
+        "next": [
+            "退出当前页面"
+        ]
+    },
+    "灵感_架子鼓": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "架子鼓"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target_音符"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+    },
+    "灵感_音乐演奏": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "音乐",
+                    "演奏"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_乐谱架"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+    },
+   
+  
+    "target1_乐谱架": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/music_stand.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {
+                // "pressure": 1
+            }
+        },
+        "next": [
+            "target2_音符2"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target2_音符2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/music2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {
+                // "pressure": 1
+            }
+        },
+        "next": [
+            "target3_琴键"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_琴键": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/keyboard.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": ["target3_琴键end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_琴键end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/keyboard.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": ["确定灵感绘制"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    // 架子鼓 灵感
+    "target_音符": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/music.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target_力量"
+        ]
+    },
+    "target_力量": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/power.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target_鼓"
+        ]
+    },
+    "target_鼓": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/drum.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        }
+    },
+}

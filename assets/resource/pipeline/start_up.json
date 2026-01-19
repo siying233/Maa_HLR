@@ -1,0 +1,216 @@
+{
+    "开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "启动绘旅人"
+        ]
+    },
+    "启动绘旅人": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.netease.skzdhlr"
+            }
+        },
+        "focus": "启动绘旅人",
+        "pre_delay": 400,
+        "post_delay": 400,
+        "next": [
+            {
+                "name": "学院公告识别",
+                "jump_back": true
+            },
+            "适龄提示",
+            "点击屏幕开始",
+            {
+                "name": "启动再等等",
+                "jump_back": true
+            }
+        ]
+    },
+    "学院公告识别": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "学院公告"
+                ],
+                "roi": [
+                    434,
+                    6,
+                    458,
+                    138
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "适龄提示": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "cadpa.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "next": [
+            "点击屏幕开始",
+            {
+                "name": "已进入游戏check",
+                "jump_back": true
+            }
+        ]
+    },
+    "已进入游戏check": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "notes.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": []
+    },
+    "点击屏幕开始": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击屏幕开始"
+                ],
+                "roi": [
+                    542,
+                    554,
+                    195,
+                    45
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "开始游戏"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "开始游戏": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            {
+                "name": "close活动限时卡池概率提升",
+                "jump_back": true
+            },
+            {
+                "name": "close活动弹窗",
+                "jump_back": true
+            },
+            {
+                "name": "月签到计划",
+                "jump_back": true
+            },
+            {
+                "name": "退出签到界面",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "主界面判断",
+                "jump_back": true
+            },
+            {
+                "name": "等等开始",
+                "jump_back": true
+            },
+            "已进入游戏check"
+        ],
+        "pre_delay": 6000,
+        "post_delay": 600
+    },
+    "启动再等等": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 600,
+        "post_delay": 8000
+    },
+    "等等开始": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 600,
+        "post_delay": 3000
+    },
+    "主界面判断": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "notes.png"
+                ],
+                "roi": [
+                    445,
+                    422,
+                    174,
+                    128
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        }
+    }
+}

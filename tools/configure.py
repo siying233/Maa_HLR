@@ -6,10 +6,10 @@ assets_dir = Path(__file__).parent.parent.resolve() / "assets"
 
 
 def configure_ocr_model():
-    assets_ocr_dir = assets_dir / "MaaCommonAssets" / "OCR"
-    if not assets_ocr_dir.exists():
-        print(f"File Not Found: {assets_ocr_dir}")
-        exit(1)
+    # assets_ocr_dir = assets_dir / "MaaCommonAssets" / "OCR"
+    # if not assets_ocr_dir.exists():
+    #     print(f"File Not Found: {assets_ocr_dir}")
+    #     exit(1)
 
     ocr_dir = assets_dir / "resource" / "model" / "ocr"
     if not ocr_dir.exists():   # copy default OCR model only if dir does not exist
@@ -23,6 +23,6 @@ def configure_ocr_model():
 
 
 if __name__ == "__main__":
-    configure_ocr_model()
+    configure_ocr_model() #暂时跳过
 
     print("OCR model configured.")

@@ -1,0 +1,618 @@
+{
+    "日程启动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "日程",
+            {
+                "name": "校园",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            }
+        ]
+    },
+    "日程": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "日程"
+                ],
+                "roi": [
+                    753,
+                    646,
+                    487,
+                    64
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            {
+                "name": "日程_邀请司岚",
+                "jump_back": true
+            },
+            {
+                "name": "日程_邀请艾因",
+                "jump_back": true
+            },
+            {
+                "name": "日程_邀请罗夏",
+                "jump_back": true
+            },
+            {
+                "name": "日程_邀请叶瑄",
+                "jump_back": true
+            },
+            {
+                "name": "日程_邀请路辰",
+                "jump_back": true
+            },
+            {
+                "name": "日程_邀请风砚",
+                "jump_back": true
+            },
+            {
+                "name": "日程_刷新列表",
+                "jump_back": true
+            },
+            {
+                "name": "日程一_随机选择",
+                "jump_back": true
+            },
+            {
+                "name": "确定日程一",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程二": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "日程二_随机选择"
+            // {
+            //     "name": "日程二_随机选择",
+            //     "jump_back": true
+            // },
+            // {
+            //     "name": "确定日程二",
+            //     "jump_back": true
+            // }
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "确定日程二": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定"
+                ],
+                "roi": [
+                    858,
+                    584,
+                    265,
+                    70
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "日程二_去邀请"
+        ],
+        "pre_delay": 200,
+        "post_delay": 200
+    },
+    "确定日程一": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定"
+                ],
+                "roi": [
+                    858,
+                    584,
+                    265,
+                    70
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            {
+                "name": "日程_请先选择",
+                "jump_back": true
+            },
+            "日程一_继续",
+            {
+                "name": "日程再等等",
+                "jump_back": true
+            },
+        ],
+        "pre_delay": 200,
+        "post_delay": 200
+    },
+    "日程再等等": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 0,
+        "post_delay": 20000
+    },
+    "日程二_去邀请": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "invitation.png"
+                ],
+                "roi": [
+                    113,
+                    89,
+                    1150,
+                    608
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    80,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            {
+                "name": "向右寻找",
+                "jump_back": true
+            },
+            {
+                "name": "邀请",
+                "jump_back": true
+            },
+            "邀请对话"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "向右寻找": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "right.png"
+                ],
+                "roi": [
+                    1131,
+                    287,
+                    149,
+                    146
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "邀请对话": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dialog.png"
+                ],
+                "roi": [
+                    269,
+                    18,
+                    549,
+                    165
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            {
+                "name": "日程二_对话",
+                "jump_back": true
+            },
+            "日程二_完成"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "邀请": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "invitation_big.png"
+                ],
+                "roi": [
+                    11,
+                    57,
+                    1234,
+                    596
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    40,
+                    100,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "日程二_对话": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    602,
+                    601,
+                    40,
+                    34
+                ]
+            }
+        },
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程二_完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "complete.png"
+                ],
+                "roi": [
+                    1039,
+                    502,
+                    159,
+                    153
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "日程一_继续": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_next.png"
+                ],
+                "roi": [
+                    1041,
+                    503,
+                    171,
+                    152
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "日程二"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "日程_请先选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "请先选择"
+                ],
+                "roi": [
+                    358,
+                    107,
+                    524,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "日程_请先选择"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_刷新列表": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "刷新列表"
+                ],
+                "roi": [
+                    281,
+                    596,
+                    158,
+                    54
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程一_随机选择": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "随机"
+                ],
+                "roi": [
+                    104,
+                    599,
+                    164,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    200,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程二_随机选择": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "随机"
+                ],
+                "roi": [
+                    104,
+                    599,
+                    164,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "确定日程二"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请司岚": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "司岚"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请艾因": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "艾因"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请罗夏": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "罗夏"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请叶瑄": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "叶瑄"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请路辰": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "路辰"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "日程_邀请风砚": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "风砚"
+                ],
+                "roi": [
+                    193,
+                    72,
+                    149,
+                    501
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    }
+}

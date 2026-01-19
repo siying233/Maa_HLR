@@ -1,0 +1,146 @@
+{
+    "画廊材料十抽开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "画廊",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "画廊": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "gallery.png",
+                "roi": [
+                    137,
+                    373,
+                    182,
+                    137
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "每日写生素材箱",
+            {
+                "name": "画廊向左滑动",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "画廊向左滑动": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "left.png",
+                "roi": [
+                    0,
+                    297,
+                    140,
+                    126
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "每日写生素材箱": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "免费抽取",
+                "roi": [
+                    247,
+                    556,
+                    249,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "素材抽十次"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "素材抽十次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_draw_10_times.png"
+                ],
+                "roi": [
+                    998,
+                    535,
+                    260,
+                    138
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "close素材奖励"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "close素材奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "claim_reward.png"
+                ],
+                "roi": [
+                    451,
+                    88,
+                    390,
+                    223
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -160,
+                    450,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "关闭当前界面"
+        ]
+    }
+}

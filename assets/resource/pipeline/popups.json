@@ -1,0 +1,128 @@
+{
+    "close活动限时卡池概率提升": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动限时卡池",
+                    "卡池概率提升"
+                ],
+                "roi": [
+                    224,
+                    365,
+                    812,
+                    205
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    526,
+                    575,
+                    182,
+                    32
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+    },
+    "close活动弹窗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动时间",
+                    "主线剧情更新",
+                    "限时"
+                ],
+                "roi": [
+                    358,
+                    395,
+                    560,
+                    179
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    412,
+                    447,
+                    463,
+                    141
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "close恭喜获得": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "claim_reward.png"
+                ],
+                "roi": [
+                    451,
+                    88,
+                    390,
+                    223
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    542,
+                    668,
+                    200,
+                    41
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "退出当前页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_back_small_blue.png"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    186,
+                    180
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
+    },
+    "点击屏幕退出": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected" : "点击屏幕退出",
+                "roi" : [510,568,259,136]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400
+    }
+}

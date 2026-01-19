@@ -1,0 +1,169 @@
+{
+    "画展启动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "画展",
+            {
+                "name": "校园",
+                "jump_back": true
+            }
+        ]
+    },
+    "画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "画展"
+                ],
+                "roi": [
+                    753,
+                    646,
+                    487,
+                    64
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "画展奖励领取",
+            "画展倒计时"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "画展奖励领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_yes.png"
+                ],
+                "roi": [
+                    608,
+                    498,
+                    288,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 300,
+        "next": [
+            "画展领取点击空白处继续"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "画展领取点击空白处继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击空白处"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "律政楼画展"
+        ],
+        "pre_delay": 300,
+        "post_delay": 300
+    },
+    "律政楼画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "律政楼"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "画展申请"
+        ]
+    },
+    "画展申请": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "申请"
+                ],
+                "roi": [
+                    869,
+                    439,
+                    199,
+                    195
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "退出画展界面"
+        ]
+    },
+    "退出画展界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_close_small.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
+    },
+    "画展倒计时": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "取消宣传"
+                ],
+                "roi": [
+                    520,
+                    497,
+                    232,
+                    148
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "画展倒计时中",
+        "next": [
+            "退出画展界面"
+        ]
+    }
+}
