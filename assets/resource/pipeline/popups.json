@@ -94,7 +94,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "btn_back_small_blue.png"
+                    "btn_back_small_blue.png","btn_back_small_blue_sky.png"
                 ],
                 "roi": [
                     0,
@@ -113,7 +113,7 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected" : "点击屏幕退出",
+                "expected" : ["屏幕退出","退出"],
                 "roi" : [510,568,259,136]
             }
         },

@@ -73,10 +73,8 @@
                 "name": "日程一_随机选择",
                 "jump_back": true
             },
-            {
-                "name": "确定日程一",
-                "jump_back": true
-            }
+             "确定日程一"
+            
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -433,12 +431,7 @@
         "action": {
             "type": "Click",
             "param": {
-                "target_offset": [
-                    0,
-                    200,
-                    0,
-                    0
-                ]
+                
             }
         },
         "next": [],

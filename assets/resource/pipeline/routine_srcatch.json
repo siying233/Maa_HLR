@@ -135,7 +135,10 @@
         },
         "next": [
             "灵感_音乐演奏",
-            "灵感_架子鼓"
+            "灵感_架子鼓",
+            "灵感_出庭律师",
+            "灵感_沙滩风光"
+
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -187,7 +190,7 @@
         },
         "next": [
             "确定速写赠送"
-        ]
+        ],"pre_delay": 600,"post_delay": 600
     },
      "确定速写赠送": {
         "recognition": {
@@ -203,7 +206,32 @@
         },
         "next": [
             "退出当前页面"
-        ]
+        ],"pre_delay": 600,"post_delay": 600
+    },
+    "灵感_沙滩风光": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "沙滩"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_海浪"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
     },
     "灵感_架子鼓": {
         "recognition": {
@@ -256,8 +284,178 @@
         "pre_delay": 600,
         "post_delay": 600,
     },
+    "灵感_出庭律师": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "律师",
+                    "出庭"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_法官"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
    
   
+    "target1_海浪": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/wave.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {
+            }
+        },
+        "next": [
+            "target2_海鸥"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target2_海鸥": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/seagull.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {
+            }
+        },
+        "next": [
+            "target3_贝壳"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_贝壳": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/shell.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": ["target3_贝壳end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_贝壳end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                   "scratch_sprits/shell.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": ["确定灵感绘制"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target1_法官": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/justice.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {
+            }
+        },
+        "next": [
+            "target2_判决"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target2_判决": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/decide.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {
+            }
+        },
+        "next": [
+            "target3_秤"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_秤": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/libra.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": ["target3_秤end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_秤end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                   "scratch_sprits/libra.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": ["确定灵感绘制"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
     "target1_乐谱架": {
         "recognition": {
             "type": "TemplateMatch",
@@ -270,7 +468,6 @@
         "action": {
             "type": "TouchDown",
             "param": {
-                // "pressure": 1
             }
         },
         "next": [
@@ -283,14 +480,13 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/music2.png"
+                    "scratch_sprits/music2.png","scratch_sprits/music2_pink.png"
                 ]
             }
         },
         "action": {
             "type": "TouchMove",
             "param": {
-                // "pressure": 1
             }
         },
         "next": [
@@ -348,7 +544,9 @@
         },
         "next": [
             "target_力量"
-        ]
+        ],
+        "pre_delay":0,
+        "post_delay": 30
     },
     "target_力量": {
         "recognition": {
@@ -365,7 +563,9 @@
         },
         "next": [
             "target_鼓"
-        ]
+        ],
+        "pre_delay":0,
+        "post_delay": 30
     },
     "target_鼓": {
         "recognition": {
@@ -377,8 +577,26 @@
             }
         },
         "action": {
+            "type": "TouchMove",
+            "param": {}
+        },"next": ["target_鼓end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target_鼓end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/drum.png"
+                ]
+            }
+        },
+        "action": {
             "type": "TouchUp",
             "param": {}
-        }
-    },
+        },
+        "pre_delay":0,
+        "post_delay": 30
+    }
 }

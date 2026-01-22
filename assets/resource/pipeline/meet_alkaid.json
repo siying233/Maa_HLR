@@ -1,13 +1,10 @@
-{
-    "男主罗夏": {
-        "max_hit": 5,
+{"男主路辰": {
+    "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "rorschach/rorschach_eyes_pinkshirt.png",
-                    "rorschach/rorschach_eyes_default.png",
-                    "rorschach/rorschach_eyes_ruo_meng_xi.png"
+                    "alkaid/alkaid_eyes.png"
                 ],
                 "roi": [
                     155,
@@ -24,17 +21,17 @@
         "repeat_delay": 150,
         "repeat": 2,
         "next": [
-            "确认罗夏赠礼",
-            // "赠礼给罗夏",
+            "确认路辰赠礼",
+            // "赠礼给路辰",
             {
-                "name": "男主罗夏",
+                "name": "男主路辰",
                 "jump_back": true
             }
         ],
         "pre_delay": 1800,
-        "post_delay": 1800,
+        "post_delay": 1800
     },
-    "确认罗夏赠礼": {
+    "确认路辰赠礼": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -54,12 +51,12 @@
             "param": {}
         },
         "next": [
-            "赠礼给罗夏"
+            "赠礼给路辰"
         ],
-        "pre_delay": 1800,
-        "post_delay": 1800
+        "pre_delay": 600,
+        "post_delay": 600
     },
-    "赠礼给罗夏": {
+    "赠礼给路辰": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -79,17 +76,17 @@
             "param": {}
         },
         "next": [
-            "赠送罗夏画作"
+            "赠送路辰万花筒"
         ],
         "pre_delay": 600,
         "post_delay": 600
     },
-    "赠送罗夏画作": {
+    "赠送路辰万花筒": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "画作"
+                    "万花筒"
                 ],
                 "roi": [
                     639,
@@ -108,5 +105,4 @@
         ],
         "pre_delay": 600,
         "post_delay": 600
-    }
-}
+    }}

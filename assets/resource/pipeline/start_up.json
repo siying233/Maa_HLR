@@ -79,6 +79,10 @@
         "next": [
             "点击屏幕开始",
             {
+                "name": "学院公告识别",
+                "jump_back": true
+            },
+            {
                 "name": "已进入游戏check",
                 "jump_back": true
             }
