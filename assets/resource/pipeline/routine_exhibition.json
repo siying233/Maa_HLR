@@ -64,10 +64,67 @@
         },
         "post_wait_freezes": 300,
         "next": [
-            "画展领取点击空白处继续"
+            "画展领取点击空白处继续",
+            "画展领取_选择奖励"
         ],
         "pre_delay": 400,
         "post_delay": 400
+    },
+    "画展领取_选择奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "接下来","保持"
+                ],"roi" : [442,413,405,150]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target": [508,481,15,15]}
+        },
+        "next": [
+           "画展领取_选择奖励对象"
+        ],
+        "pre_delay": 300,
+        "post_delay": 300
+    },
+    "画展领取_选择奖励对象": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "星尘"
+                ],"roi" : [474,273,347,184]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "画展领取_确认更换奖励"
+        ],
+        "pre_delay": 300,
+        "post_delay": 300
+    },
+    "画展领取_确认更换奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ["btn_receive.png"]
+                ,
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "画展领取点击空白处继续"
+        ],
+        "pre_delay": 300,
+        "post_delay": 300
     },
     "画展领取点击空白处继续": {
         "recognition": {

@@ -137,7 +137,8 @@
             "灵感_音乐演奏",
             "灵感_架子鼓",
             "灵感_出庭律师",
-            "灵感_沙滩风光"
+            "灵感_沙滩风光",
+            "灵感_星星"
 
         ],
         "pre_delay": 600,
@@ -258,6 +259,31 @@
         "pre_delay": 600,
         "post_delay": 600,
     },
+    "灵感_星星": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "星星"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_追逐"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+    },
     "灵感_音乐演奏": {
         "recognition": {
             "type": "OCR",
@@ -312,6 +338,79 @@
     },
    
   
+    "target1_追逐": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/run.png",
+                    "scratch_sprits/run_pink.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {
+            }
+        },
+        "next": [
+            "target2_土星"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target2_土星": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/saturn.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {
+            }
+        },
+        "next": [
+            "target3_星星"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_星星": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/stars.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": ["target3_星星end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_星星end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                   "scratch_sprits/stars.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": ["确定灵感绘制"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
     "target1_海浪": {
         "recognition": {
             "type": "TemplateMatch",

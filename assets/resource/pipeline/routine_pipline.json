@@ -36,7 +36,7 @@
         },
         "next": [
             "好友加载完成",
-            "[jump_back]好友加载中"
+            {"name": "好友加载中","jump_back": true}
         ],
         "pre_delay": 800,
         "post_delay": 800

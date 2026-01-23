@@ -124,5 +124,27 @@
         },
         "pre_delay": 400,
         "post_delay": 400
+    },
+    "close_限时活动开屏_采风":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["时间"],
+                "roi" : [201,130,897,440]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    412,
+                    447,
+                    463,
+                    141
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400
     }
 }
