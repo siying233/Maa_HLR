@@ -138,7 +138,8 @@
             "灵感_架子鼓",
             "灵感_出庭律师",
             "灵感_沙滩风光",
-            "灵感_星星"
+            "灵感_星星",
+            "灵感_舞会"
 
         ],
         "pre_delay": 600,
@@ -336,8 +337,107 @@
         "pre_delay": 600,
         "post_delay": 600
     },
+    "灵感_舞会": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "舞会",
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_面具"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
    
   
+    "target1_面具": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/mask.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {
+            }
+        },
+        "next": [
+            "target2_口红"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target2_口红": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/lipstick.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {
+            }
+        },
+        "next": [
+            "target3_音乐舞会"
+        ],"pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_音乐舞会": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/music.png",
+                    "scratch_sprits/music_blue.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": ["target3_音乐舞会end"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
+    "target3_音乐舞会end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                   "scratch_sprits/music.png",
+                    "scratch_sprits/music_blue.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": ["确定灵感绘制"],
+        "pre_delay":0,
+        "post_delay": 30
+    },
     "target1_追逐": {
         "recognition": {
             "type": "TemplateMatch",

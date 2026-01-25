@@ -1,5 +1,5 @@
 {
-    "男主罗夏": {
+    "if男主罗夏": {
         "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
@@ -25,14 +25,39 @@
         "repeat": 2,
         "next": [
             "确认罗夏赠礼",
-            // "赠礼给罗夏",
             {
                 "name": "男主罗夏",
                 "jump_back": true
             }
         ],
+       
+    },
+    "男主罗夏": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "rorschach/rorschach_eyes_pinkshirt.png",
+                    "rorschach/rorschach_eyes_default.png",
+                    "rorschach/rorschach_eyes_ruo_meng_xi.png"
+                ],
+                "roi": [
+                    155,
+                    77,
+                    600,
+                    297
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "repeat_delay": 150,
+        "repeat": 2,
         "pre_delay": 1800,
-        "post_delay": 1800,
+        "post_delay": 1800
     },
     "确认罗夏赠礼": {
         "recognition": {

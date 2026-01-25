@@ -1,0 +1,67 @@
+{
+    "点击猫": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template": ["cat.png"],
+                       "roi" : [337,303,187,173] }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                
+            }
+        },
+        "next": [
+            "猫"
+        ]
+    },
+    "猫": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template" : "cat_main.png",
+                       "roi" : [489,438,204,229] }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {
+                
+            }
+        },
+        "next": [
+            "猫罐头免费补签",
+            "来自猫的馈赠",
+        ]
+    },
+    "猫罐头免费补签": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected" : "免费补签",
+                       "roi" : [790,303,207,145] }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                
+            }
+        },
+        "next": [
+           
+        ]
+    },
+    "来自猫的馈赠": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template": ["btn_receive.png"],
+                       "roi" : [790,303,207,145] }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                
+            }
+        },
+        "next": [
+            
+        ]
+    }
+}

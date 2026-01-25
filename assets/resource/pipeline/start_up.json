@@ -147,6 +147,10 @@
                 "jump_back": true
             },
             {
+                "name": "close活动弹窗_强制3次",
+                "jump_back": true
+            },
+            {
                 "name": "close活动弹窗",
                 "jump_back": true
             },
@@ -188,7 +192,7 @@
         "post_delay": 8000
     },
     "等等开始": {
-        "max_hit": 5,
+        "max_hit": 3,
         "recognition": {
             "type": "DirectHit",
             "param": {}
