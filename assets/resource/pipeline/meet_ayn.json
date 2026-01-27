@@ -1,5 +1,5 @@
 {
-    "if男主艾因": {
+    "男主艾因": {
         "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
@@ -24,35 +24,12 @@
         "repeat": 2,
         "next": [
             "确认艾因赠礼",
+            // "赠礼给艾因",
             {
                 "name": "男主艾因",
                 "jump_back": true
             }
-        ]
-    },
-    "男主艾因": {
-        "max_hit": 5,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "ayn/ayn_eyes_kid.png",
-                    "ayn/ayn_eyes_default.png"
-                ],
-                "roi": [
-                    155,
-                    77,
-                    600,
-                    297
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {}
-        },
-        "repeat_delay": 150,
-        "repeat": 2,
+        ],
         "pre_delay": 1800,
         "post_delay": 1800
     },
