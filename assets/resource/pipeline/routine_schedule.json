@@ -73,11 +73,11 @@
                 "name": "日程一_随机选择",
                 "jump_back": true
             },
-             "确定日程一"
-            
+            "确定日程一"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程"
     },
     "日程二": {
         "recognition": {
@@ -91,14 +91,6 @@
         "post_wait_freezes": 500,
         "next": [
             "日程二_随机选择"
-            // {
-            //     "name": "日程二_随机选择",
-            //     "jump_back": true
-            // },
-            // {
-            //     "name": "确定日程二",
-            //     "jump_back": true
-            // }
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -126,7 +118,8 @@
             "日程二_去邀请"
         ],
         "pre_delay": 200,
-        "post_delay": 200
+        "post_delay": 200,
+        "focus": "确定日程二"
     },
     "确定日程一": {
         "recognition": {
@@ -156,10 +149,11 @@
             {
                 "name": "日程再等等",
                 "jump_back": true
-            },
+            }
         ],
         "pre_delay": 200,
-        "post_delay": 200
+        "post_delay": 200,
+        "focus": "确定日程一"
     },
     "日程再等等": {
         "recognition": {
@@ -179,12 +173,6 @@
             "param": {
                 "template": [
                     "invitation.png"
-                ],
-                "roi": [
-                    113,
-                    89,
-                    1150,
-                    608
                 ]
             }
         },
@@ -211,7 +199,8 @@
             "邀请对话"
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "日程二_去邀请"
     },
     "向右寻找": {
         "recognition": {
@@ -234,7 +223,8 @@
         },
         "next": [],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "向右寻找"
     },
     "邀请对话": {
         "recognition": {
@@ -263,7 +253,8 @@
             "日程二_完成"
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "邀请对话"
     },
     "邀请": {
         "recognition": {
@@ -293,7 +284,8 @@
         },
         "next": [],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "邀请"
     },
     "日程二_对话": {
         "max_hit": 5,
@@ -313,7 +305,8 @@
             }
         },
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程二_对话"
     },
     "日程二_完成": {
         "recognition": {
@@ -336,7 +329,8 @@
         },
         "next": [],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "日程二_完成"
     },
     "日程一_继续": {
         "recognition": {
@@ -361,7 +355,8 @@
             "日程二"
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "日程一_继续"
     },
     "日程_请先选择": {
         "recognition": {
@@ -410,7 +405,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_刷新列表"
     },
     "日程一_随机选择": {
         "max_hit": 1,
@@ -430,13 +426,12 @@
         },
         "action": {
             "type": "Click",
-            "param": {
-                
-            }
+            "param": {}
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程一_随机选择"
     },
     "日程二_随机选择": {
         "max_hit": 1,
@@ -462,7 +457,8 @@
             "确定日程二"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程二_随机选择"
     },
     "日程_邀请司岚": {
         "max_hit": 1,
@@ -486,7 +482,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请司岚"
     },
     "日程_邀请艾因": {
         "max_hit": 1,
@@ -510,7 +507,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请艾因"
     },
     "日程_邀请罗夏": {
         "max_hit": 1,
@@ -534,7 +532,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请罗夏"
     },
     "日程_邀请叶瑄": {
         "max_hit": 1,
@@ -558,7 +557,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请叶瑄"
     },
     "日程_邀请路辰": {
         "max_hit": 1,
@@ -582,7 +582,8 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请路辰"
     },
     "日程_邀请风砚": {
         "max_hit": 1,
@@ -606,6 +607,7 @@
         },
         "next": [],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "日程_邀请风砚"
     }
 }

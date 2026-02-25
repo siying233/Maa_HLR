@@ -4,13 +4,13 @@
     // 文档：https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.3-ProjectInterfaceV2%E5%8D%8F%E8%AE%AE.md
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
-    "name": "MaaHlr",
-    "description": "这是一个使用 MaaFramework 创建的新项目。",
+    "name": "MaaHLR",
+    "description": "MaaHLR 海螺肉小助手，开发中~嘿嘿嘿",
     // "contact": "QQ群: 123456789",
     "license": "MIT",
-    "welcome": "首次使用！欢迎使用 MAA!",
+    "welcome": "首次使用！欢迎使用 MAA HLR!",
     // 填写项目地址和版本号可实现自动更新功能
-    "github": "https://github.com/MaaXYZ/MaaPracticeBoilerplate",
+    "github": "https://github.com/siying233/Maa_HLR",
     "version": "1.0.0",
     // Mirror酱为第三方分发服务，新项目默认关闭
     // 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
@@ -60,93 +60,163 @@
     // },
     "task": [
         {
-            "name": "启动绘旅人",
-            "label": "$启动绘旅人",
+            "name": "🎮启动绘旅人",
+            "label": "启动绘旅人",
             "entry": "开始",
+            "description": "打开游戏，需先手动打开MUMU模拟器并已经登录账号",
             "default_check": true
         },
         {
-            "name": "赠人玫瑰",
+            "name": "💐赠人玫瑰",
             "entry": "赠人玫瑰开始",
-            "label": "$赠人玫瑰-日常",
+            "label": "赠人玫瑰-日常",
+            "description": "赠送好友体力",
             "default_check": true
         },
         {
-            "name": "画展启动", //exhibition
+            "name": "🖼画展启动", //exhibition
             "entry": "画展启动",
-            "label": "$画展-日常",
+            "label": "画展-日常",
+            "description": "领取上一场画展奖励，并举办一场画展",
             "default_check": true
         },
         {
-            "name": "课后出行", // getgoing
+            "name": "🚶课后出行", // getgoing
             "entry": "课后出行启动",
-            "label": "$课后出行-日常",
-            "default_check": true
+            "label": "课后出行-日常",
+            "description": "出行，随机见到一位男主，进行互赠礼物",
+            "default_check": true,
         },
         {
-            "name": "日程",
+            "name": "📅日程",
             "entry": "日程启动",
-            "label": "$日程-日常",
-            "default_check": true
+            "label": "日程-日常",
+            "description": "安排当天日常，优先邀请男主，随机邀请其他角色",
+            "default_check": true,
+            "option": [
+                "日程二选择对象"
+            ]
         },
         {
-            "name": "画廊材料十抽",
+            "name": "🤹‍♀️画廊材料十抽",
             "entry": "画廊材料十抽开始",
-            "label": "$画廊材料-日常",
+            "label": "画廊材料-日常",
+            "description": "领取每日免费画廊材料",
             "default_check": true
         },
         {
-            "name": "速写",
+            "name": "🎨速写",
             "entry": "速写启动",
-            "label": "$速写-日常",
-            "default_check": true
+            "label": "速写-日常",
+            "description": "随机选择速写地点。（当前速写图鉴待完善）",
+            // "default_check": true
         },
         {
-            "name": "日常领取",
+            "name": "⭕日常领取",
             "entry": "日常领取",
-            "label": "$奖励领取-日常收尾",
+            "label": "奖励领取-日常收尾",
+            "description": "领取当日奖励",
             "default_check": true
-        },
+        }
         // ,{
-        //     "name": "选项任务",
-        //     "entry": "MyTask2",
-        //     "option": [
-        //         "任务选项1"
-        //     ]
-        // },
-        // {
-        //     "name": "参数任务",
-        //     "entry": "MyTask3",
-        //     "option": [
-        //         "任务选项1"
-        //     ],
-        //     "pipeline_override": {}
-        // },
-        // {
-        //     "name": "带Custom的任务",
-        //     "entry": "MyTask4"
+        //     "name": "",
+        //     "entry": "",
+        //     "label": "",
+        //     "description": "",
+        //     "default_check": false
         // }
-    ]
-    // "option": {
-    //     "任务选项1": {
-    //         "cases": [
-    // {
-    //     "name": "文本1",
-    //     "pipeline_override": {
-    //         "OcrTask": {
-    //             "text": "文本1"
-    //         }
-    //     }
-    // },
-    // {
-    //     "name": "文本2",
-    //     "pipeline_override": {
-    //         "OcrTask": {
-    //             "text": "文本2"
-    //         }
-    //     }
-    // }
-    // ]
-    // }
-    // }
+        
+    ],
+    "option": {
+        "日程二选择对象": {
+            "type": "select",
+            "cases": [
+                        {
+                            "name": "日程二_随机选择"
+                            
+                        },
+                        {
+                            "name": "日程二选罗夏",
+                            "pipeline_override": {
+                                "日程二_随机选择": {
+                                    "recognition": {
+                                        "type": "OCR",
+                                        "param": {
+                                            "expected": [
+                                                "罗夏"
+                                            ],
+                                            "roi": [193,72,149,501]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "日程二选叶瑄",
+                            "pipeline_override": {
+                                "日程二_随机选择": {
+                                    "recognition": {
+                                        "type": "OCR",
+                                        "param": {
+                                            "expected": [
+                                                "叶瑄"
+                                            ],
+                                            "roi": [193,72,149,501]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "日程二选艾因",
+                            "pipeline_override": {
+                                "日程二_随机选择": {
+                                    "recognition": {
+                                        "type": "OCR",
+                                        "param": {
+                                            "expected": [
+                                                "艾因"
+                                            ],
+                                            "roi": [193,72,149,501]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "日程二选路辰",
+                            "pipeline_override": {
+                                "日程二_随机选择": {
+                                    "recognition": {
+                                        "type": "OCR",
+                                        "param": {
+                                            "expected": [
+                                                "路辰"
+                                            ],
+                                            "roi": [193,72,149,501]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "日程二选司岚",
+                            "pipeline_override": {
+                                "日程二_随机选择": {
+                                    "recognition": {
+                                        "type": "OCR",
+                                        "param": {
+                                            "expected": [
+                                                "司岚"
+                                            ],
+                                            "roi": [193,72,149,501]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                       
+        ]
+    }
+    }
 }

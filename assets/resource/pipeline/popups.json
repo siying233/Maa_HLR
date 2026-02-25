@@ -1,4 +1,58 @@
 {
+    "月经提醒弹窗 ": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "特殊的日子快到了"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "月经确认"
+        ]
+    },
+    "月经确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_period_iknow.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "月经确认"
+    },
+    "校园": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "school.png"
+                ],
+                "roi": [
+                    10,
+                    208,
+                    107,
+                    143
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "focus": "校园"
+    },
     "close活动限时卡池概率提升": {
         "recognition": {
             "type": "OCR",
@@ -28,6 +82,28 @@
         },
         "pre_delay": 400,
         "post_delay": 400,
+        "focus": "close活动限时卡池概率提升"
+    },
+    "close活动弹窗_强制3次": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    205,
+                    589,
+                    23,
+                    21
+                ]
+            }
+        },
+        "pre_delay": 600,
+        "post_delay": 600,
+        "focus": "close活动弹窗_强制3次"
     },
     "close活动弹窗": {
         "recognition": {
@@ -58,7 +134,8 @@
             }
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "close活动弹窗"
     },
     "close恭喜获得": {
         "recognition": {
@@ -87,14 +164,16 @@
             }
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "close恭喜获得"
     },
     "退出当前页面": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "btn_back_small_blue.png","btn_back_small_blue_sky.png"
+                    "btn_back_small_blue.png",
+                    "btn_back_small_blue_sky.png"
                 ],
                 "roi": [
                     0,
@@ -107,30 +186,67 @@
         "action": {
             "type": "Click",
             "param": {}
-        }
+        },
+        "focus": "退出当前页面"
     },
     "点击屏幕退出": {
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected" : ["屏幕退出","退出"],
-                "roi" : [510,568,259,136]
+                "expected": [
+                    "屏幕退出",
+                    "退出"
+                ],
+                "roi": [
+                    510,
+                    568,
+                    259,
+                    136
+                ]
             }
         },
         "action": {
             "type": "Click",
-            "param": {
-            }
+            "param": {}
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "点击屏幕退出"
     },
-    "close_限时活动开屏_采风":{
+    "error_请先完成邀约哦": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ["invitation.png"],
+                "roi": [
+                    510,
+                    568,
+                    259,
+                    136
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "error_邀约未完成"
+    },
+    "close_限时活动开屏_采风": {
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected": ["时间"],
-                "roi" : [201,130,897,440]
+                "expected": [
+                    "时间"
+                ],
+                "roi": [
+                    201,
+                    130,
+                    897,
+                    440
+                ]
             }
         },
         "action": {
@@ -145,6 +261,7 @@
             }
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "close_限时活动开屏_采风"
     }
 }

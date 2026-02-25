@@ -43,7 +43,8 @@
             }
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "画廊"
     },
     "画廊向左滑动": {
         "recognition": {
@@ -63,7 +64,8 @@
             "param": {}
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "画廊向左滑动"
     },
     "每日写生素材箱": {
         "recognition": {
@@ -108,10 +110,27 @@
             "param": {}
         },
         "next": [
-            "close素材奖励"
+            "close素材奖励",
+            {"name": "点击_跳过素材","jump_back": true}
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "素材抽十次"
+    },
+    "点击_跳过素材": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["跳过"],
+                "roi" : [1121,0,159,156]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "focus": "点击_跳过"
     },
     "close素材奖励": {
         "recognition": {
@@ -141,6 +160,7 @@
         },
         "next": [
             "关闭当前界面"
-        ]
+        ],
+        "focus": "close素材奖励"
     }
 }

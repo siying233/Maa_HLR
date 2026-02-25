@@ -1,5 +1,5 @@
 {
-    "男主罗夏": {
+    "if男主罗夏": {
         "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
@@ -7,6 +7,8 @@
                 "template": [
                     "rorschach/rorschach_eyes_pinkshirt.png",
                     "rorschach/rorschach_eyes_default.png",
+                    "rorschach/rorschach_eyes_zhi_zheng_guan.png",
+                    "rorschach/rorschach_eyes_shenqizhidi.png",
                     "rorschach/rorschach_eyes_ruo_meng_xi.png"
                 ],
                 "roi": [
@@ -25,14 +27,42 @@
         "repeat": 2,
         "next": [
             "确认罗夏赠礼",
-            // "赠礼给罗夏",
             {
                 "name": "男主罗夏",
                 "jump_back": true
             }
         ],
+        "focus": "if男主罗夏"
+    },
+    "男主罗夏": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "rorschach/rorschach_eyes_pinkshirt.png",
+                    "rorschach/rorschach_eyes_default.png",
+                    "rorschach/rorschach_eyes_zhi_zheng_guan.png",
+                    "rorschach/rorschach_eyes_shenqizhidi.png",
+                    "rorschach/rorschach_eyes_ruo_meng_xi.png"
+                ],
+                "roi": [
+                    155,
+                    77,
+                    600,
+                    297
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "repeat_delay": 150,
+        "repeat": 2,
         "pre_delay": 1800,
         "post_delay": 1800,
+        "focus": "男主罗夏"
     },
     "确认罗夏赠礼": {
         "recognition": {
@@ -57,7 +87,8 @@
             "赠礼给罗夏"
         ],
         "pre_delay": 1800,
-        "post_delay": 1800
+        "post_delay": 1800,
+        "focus": "确认罗夏赠礼"
     },
     "赠礼给罗夏": {
         "recognition": {
@@ -79,17 +110,19 @@
             "param": {}
         },
         "next": [
-            "赠送罗夏画作"
+            "赠送罗夏画作",
+            {"name": "赠礼窗口向下滚动","jump_back": true}
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "赠礼给罗夏"
     },
     "赠送罗夏画作": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "画作"
+                    "画作","手机壳","手链","惊喜"
                 ],
                 "roi": [
                     639,
@@ -107,6 +140,7 @@
             "赠送"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "赠送罗夏画作"
     }
 }

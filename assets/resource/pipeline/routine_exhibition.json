@@ -13,6 +13,10 @@
             {
                 "name": "校园",
                 "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
             }
         ]
     },
@@ -38,7 +42,27 @@
         "post_wait_freezes": 500,
         "next": [
             "画展奖励领取",
-            "画展倒计时"
+            "画展倒计时",
+            "选择举办画展位置"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "选择举办画展位置": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["选择"],
+                "roi" : [652,568,196,46]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 300,
+        "next": [
+            "律政楼画展"
         ],
         "pre_delay": 400,
         "post_delay": 400
@@ -68,26 +92,42 @@
             "画展领取_选择奖励"
         ],
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "画展奖励领取"
     },
     "画展领取_选择奖励": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "接下来","保持"
-                ],"roi" : [442,413,405,150]
+                    "接下来",
+                    "保持"
+                ],
+                "roi": [
+                    442,
+                    413,
+                    405,
+                    150
+                ]
             }
         },
         "action": {
             "type": "Click",
-            "param": {"target": [508,481,15,15]}
+            "param": {
+                "target": [
+                    508,
+                    481,
+                    15,
+                    15
+                ]
+            }
         },
         "next": [
-           "画展领取_选择奖励对象"
+            "画展领取_选择奖励对象"
         ],
         "pre_delay": 300,
-        "post_delay": 300
+        "post_delay": 300,
+        "focus": "画展领取_选择奖励"
     },
     "画展领取_选择奖励对象": {
         "recognition": {
@@ -95,7 +135,13 @@
             "param": {
                 "expected": [
                     "星尘"
-                ],"roi" : [474,273,347,184]
+                ],
+                "roi": [
+                    474,
+                    273,
+                    347,
+                    184
+                ]
             }
         },
         "action": {
@@ -106,14 +152,16 @@
             "画展领取_确认更换奖励"
         ],
         "pre_delay": 300,
-        "post_delay": 300
+        "post_delay": 300,
+        "focus": "画展领取_选择奖励对象"
     },
     "画展领取_确认更换奖励": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template": ["btn_receive.png"]
-                ,
+                "template": [
+                    "btn_receive.png"
+                ]
             }
         },
         "action": {
@@ -124,7 +172,8 @@
             "画展领取点击空白处继续"
         ],
         "pre_delay": 300,
-        "post_delay": 300
+        "post_delay": 300,
+        "focus": "画展领取_确认更换奖励"
     },
     "画展领取点击空白处继续": {
         "recognition": {
@@ -132,7 +181,13 @@
             "param": {
                 "expected": [
                     "点击空白处"
-                ],"roi" : [343,530,578,166]
+                ],
+                "roi": [
+                    343,
+                    530,
+                    578,
+                    166
+                ]
             }
         },
         "action": {
@@ -143,7 +198,8 @@
             "律政楼画展"
         ],
         "pre_delay": 300,
-        "post_delay": 300
+        "post_delay": 300,
+        "focus": "画展领取点击空白处继续"
     },
     "律政楼画展": {
         "recognition": {
@@ -151,7 +207,13 @@
             "param": {
                 "expected": [
                     "律政楼"
-                ],"roi" : [529,176,490,368]
+                ],
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ]
             }
         },
         "action": {
@@ -160,7 +222,8 @@
         },
         "next": [
             "画展申请"
-        ]
+        ],
+        "focus": "律政楼画展"
     },
     "画展申请": {
         "recognition": {
@@ -183,7 +246,8 @@
         },
         "next": [
             "退出画展界面"
-        ]
+        ],
+        "focus": "画展申请"
     },
     "退出画展界面": {
         "recognition": {
@@ -197,7 +261,8 @@
         "action": {
             "type": "Click",
             "param": {}
-        }
+        },
+        "focus": "退出画展界面"
     },
     "画展倒计时": {
         "recognition": {

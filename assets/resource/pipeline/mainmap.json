@@ -98,7 +98,8 @@
             "param": {}
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "关闭当前界面"
     },
     "已在抽卡界面": {
         "recognition": {
@@ -124,14 +125,19 @@
     },
     "日常领取": {
         "recognition": {
-            "type": "DirectHit",
+            "type": "DirectHit"
         },
         "action": {
             "type": "DoNothing",
             "param": {}
         },
-        "next": ["点击日常",
-            {"name":"退回到主界面","jump_back": true}],
+        "next": [
+            "点击日常",
+            {
+                "name": "退回到主界面",
+                "jump_back": true
+            }
+        ],
         "pre_delay": 400,
         "post_delay": 400
     },
@@ -139,35 +145,58 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template" : ["daily.png"],
-                "roi" : [162,0,145,139]
+                "template": [
+                    "daily.png"
+                ],
+                "roi": [
+                    162,
+                    0,
+                    145,
+                    139
+                ]
             }
         },
         "action": {
             "type": "Click",
             "param": {}
         },
-        "next": ["点击_一键领取",{"name": "close恭喜获得","jump_back": true}],
+        "next": [
+            "点击_一键领取",
+            {
+                "name": "close恭喜获得",
+                "jump_back": true
+            }
+        ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "点击日常"
     },
     "点击_一键领取": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template" : ["claim_reward_daily.png"],
-                "roi" : [1153,565,127,155]
+                "template": [
+                    "claim_reward_daily.png"
+                ],
+                "roi": [
+                    1153,
+                    565,
+                    127,
+                    155
+                ]
             }
         },
         "action": {
             "type": "Click",
             "param": {}
-        },"next": ["日常领取_点击空白处继续"],
+        },
+        "next": [
+            "日常领取_点击空白处继续"
+        ],
         "pre_delay": 800,
         "post_delay": 400,
+        "focus": "点击_一键领取"
     },
-
-
     "日常领取_点击空白处继续": {
         "max_hit": 2,
         "recognition": {
@@ -175,29 +204,48 @@
             "param": {
                 "expected": [
                     "点击空白处"
-                ],"roi" : [510,612,284,64]
+                ],
+                "roi": [
+                    510,
+                    612,
+                    284,
+                    64
+                ]
             }
         },
         "action": {
             "type": "Click",
             "param": {}
         },
-        "next": ["点击_一键领取2",],
+        "next": [
+            "点击_一键领取2"
+        ],
         "pre_delay": 300,
-        "post_delay": 300
-    },    
+        "post_delay": 300,
+        "focus": "日常领取_点击空白处继续"
+    },
     "点击_一键领取2": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template" : ["claim_reward_daily.png"],
-                "roi" : [1153,565,127,155]
+                "template": [
+                    "claim_reward_daily.png"
+                ],
+                "roi": [
+                    1153,
+                    565,
+                    127,
+                    155
+                ]
             }
         },
         "action": {
             "type": "Click",
             "param": {}
-        },"next": ["日常领取_点击空白处继续2"],
+        },
+        "next": [
+            "日常领取_点击空白处继续2"
+        ],
         "pre_delay": 800,
         "post_delay": 400,
         "focus": "日常结束，请确认奖励"
@@ -209,7 +257,13 @@
             "param": {
                 "expected": [
                     "点击空白处"
-                ],"roi" : [510,612,284,64]
+                ],
+                "roi": [
+                    510,
+                    612,
+                    284,
+                    64
+                ]
             }
         },
         "action": {
@@ -217,6 +271,7 @@
             "param": {}
         },
         "pre_delay": 300,
-        "post_delay": 300
-    },   
+        "post_delay": 300,
+        "focus": "日常领取_点击空白处继续2"
+    }
 }

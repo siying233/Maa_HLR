@@ -23,7 +23,7 @@
                 "package": "com.netease.skzdhlr"
             }
         },
-        "focus": "启动绘旅人",
+        "focus": "正在启动绘旅人",
         "pre_delay": 400,
         "post_delay": 400,
         "next": [
@@ -33,6 +33,9 @@
             },
             "适龄提示",
             "点击屏幕开始",
+            {"name":"资源下载中",
+            "jump_back": true
+            },
             {
                 "name": "启动再等等",
                 "jump_back": true
@@ -59,7 +62,8 @@
             "param": {}
         },
         "pre_delay": 400,
-        "post_delay": 400
+        "post_delay": 400,
+        "focus": "学院公告识别"
     },
     "适龄提示": {
         "recognition": {
@@ -74,6 +78,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "适龄提示已加载",
         "pre_delay": 400,
         "post_delay": 400,
         "next": [
@@ -101,6 +106,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "已进入游戏check",
         "next": []
     },
     "点击屏幕开始": {
@@ -126,7 +132,8 @@
             "开始游戏"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "点击屏幕开始"
     },
     "开始游戏": {
         "recognition": {
@@ -143,7 +150,7 @@
                 "jump_back": true
             },
             {
-                "name": "close_限时活动开屏_采风",
+                "name": "close活动弹窗_强制3次",
                 "jump_back": true
             },
             {
@@ -175,6 +182,20 @@
         "pre_delay": 6000,
         "post_delay": 600
     },
+    "资源下载中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected" : "下载资源中","roi" : [389,606,523,114]
+                    }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "资源下载中再等等",
+        "pre_delay": 600,
+        "post_delay": 8000
+    },
     "启动再等等": {
         "recognition": {
             "type": "DirectHit",
@@ -184,6 +205,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "启动再等等",
         "pre_delay": 600,
         "post_delay": 8000
     },
@@ -197,6 +219,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "等等开始",
         "pre_delay": 600,
         "post_delay": 3000
     },
@@ -219,6 +242,195 @@
         "action": {
             "type": "DoNothing",
             "param": {}
+        },
+        "focus": "主界面判断"
+    },
+    "月签到计划": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "月签到计划"
+                ],
+                "roi": [
+                    240,
+                    86,
+                    377,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "next": [
+            "close恭喜获得",
+            "月签到领取钻石",
+            "退出签到界面"
+        ]
+    },
+    "月签到领取钻石": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "capital_diamond.png"
+                ],
+                "roi": [
+                    484,
+                    80,
+                    542,
+                    566
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "跳过月卡_直接领取",
+            "退出签到界面"
+        ],
+        "focus": "月签到领取钻石"
+    },
+    "跳过月卡_直接领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "直接领取"
+                ],
+                "roi": [
+                    321,
+                    384,
+                    303,
+                    168
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "退出签到界面"
+        ],
+        "focus": "跳过月卡_直接领取"
+    },
+    "月签到领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ],
+                "roi": [
+                    353,
+                    426,
+                    574,
+                    88
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "月签到领取确认"
+        ],
+        "focus": "月签到领取"
+    },
+    "月签到领取确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ],
+                "roi": [
+                    481,
+                    129,
+                    340,
+                    166
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "退出签到界面"
+        ],
+        "focus": "月签到领取确认"
+    },
+    "月签到成功领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点主空白外继续"
+                ],
+                "roi": [
+                    508,
+                    580,
+                    266,
+                    132
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "签到界面停留"
+        ],
+        "focus": "月签到成功领取"
+    },
+    "签到界面停留": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "checkin_logo.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
         }
+    },
+    "退出签到界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_back_small_blue.png"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    186,
+                    180
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "退出签到界面"
     }
 }

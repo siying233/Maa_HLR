@@ -13,6 +13,10 @@
             {
                 "name": "校园",
                 "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
             }
         ]
     },
@@ -38,11 +42,11 @@
         "post_wait_freezes": 500,
         "next": [
             "家门口",
-            "男主路辰",
-            "男主司岚",
-            "男主叶瑄",
-            "男主罗夏",
-            "男主艾因",
+            "if男主路辰",
+            "if男主司岚",
+            "if男主叶瑄",
+            "if男主罗夏",
+            "if男主艾因",
             "相约之地选择界面",
             {
                 "name": "校园",
@@ -50,7 +54,8 @@
             }
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "课后出行"
     },
     "家门口": {
         "recognition": {
@@ -72,14 +77,29 @@
             "param": {}
         },
         "next": [
-            "男主路辰",
-            "男主司岚",
-            "男主叶瑄",
-            "男主罗夏",
-            "男主艾因"
+            "if男主路辰",
+            "if男主司岚",
+            "if男主叶瑄",
+            "if男主罗夏",
+            "if男主艾因"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "家门口"
+    },
+    "赠礼窗口向下滚动":{
+        "recognition": {
+            "type": "DirectHit"            
+        },
+        "action": {
+            "type": "Swipe",
+            
+            "param": {
+                "begin":  [1203,505,16,10],
+                "end": [1199,99,12,12],
+                "duration": 1300
+            }
+        },
     },
     "相约之地选择界面": {
         "recognition": {
@@ -104,7 +124,8 @@
             "选择去赴约"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "相约之地选择界面"
     },
     "选择去赴约": {
         "recognition": {
@@ -126,14 +147,14 @@
             "param": {}
         },
         "next": [
-            "男主路辰",
-            "男主司岚",
-            "男主叶瑄",
-            "男主罗夏",
-            "男主艾因"
-        ]
+            "if男主路辰",
+            "if男主司岚",
+            "if男主叶瑄",
+            "if男主罗夏",
+            "if男主艾因"
+        ],
+        "focus": "选择去赴约"
     },
-    
     "赠送": {
         "recognition": {
             "type": "OCR",
@@ -157,7 +178,8 @@
             "课后出行结束"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 600,
+        "focus": "赠送"
     },
     "课后出行结束": {
         "recognition": {
@@ -179,7 +201,7 @@
             "param": {}
         },
         "repeat_delay": 3000,
-        "repeat": 2
+        "repeat": 2,
+        "focus": "课后出行结束"
     }
-    
 }

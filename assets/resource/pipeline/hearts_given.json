@@ -1,0 +1,171 @@
+{
+    "赠人玫瑰开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "好友",
+            "好友加载完成",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "好友": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "好友"
+                ],
+                "roi": [
+                    1120,
+                    618,
+                    160,
+                    102
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "好友加载完成",
+            {
+                "name": "好友加载中",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "好友"
+    },
+    "好友加载中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "加载中"
+                ],
+                "roi": [
+                    539,
+                    129,
+                    218,
+                    51
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "好友加载完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "hearts.png",
+                "roi": [
+                    955,
+                    260,
+                    201,
+                    354
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "好友一键赠领"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "好友一键赠领": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "键赠领"
+                ],
+                "roi": [
+                    917,
+                    588,
+                    275,
+                    132
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "确认体力赠领"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+        "focus": "好友一键赠领"
+    },
+    "确认体力赠领": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ],
+                "roi": [
+                    486,
+                    136,
+                    311,
+                    159
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "好友赠领返回"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "确认体力赠领"
+    },
+    "好友赠领返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_close_small.png"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    185,
+                    169
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "好友赠领返回"
+    }
+}

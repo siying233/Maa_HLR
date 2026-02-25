@@ -1,0 +1,368 @@
+{
+    "神陨纪元start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "请确保已进入神陨纪元",
+        "next": ["神陨纪元",
+                "城市调查",
+                "已进入城市调查"
+        ]
+    },
+    "神陨纪元": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template": ["story_line/deimortem_era_title.png"]}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "进入神陨纪元",
+        "next": ["城市调查",
+        "已进入城市调查"
+        ]
+    },
+    "城市调查": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template" : "story_line/urban_survey.png"
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "神陨_城市调查",
+        "next": ["已进入城市调查"
+        ]
+    },
+    "已进入城市调查": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {"template" : "story_line/urban_survey_title.png"
+        }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "已进入:城市调查",
+        "next": [
+            // "调查_高塔",
+            // "调查_舵手会馆",
+            // "调查_研究所",
+            "调查_治安署",
+            "调查_地下酒吧"
+        ]
+    },
+    "调查_地下酒吧": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"酒吧",
+              "roi" : [673,452,339,93]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "调查:酒吧",
+        "next": ["click_现在就去",
+                "click_自动调查到24点",
+                "click_休息"
+        ]
+    },
+    "调查_治安署": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"治安",
+              "roi" : [959,342,303,92]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "调查:治安署",
+        "next": ["click_现在就去",
+                "click_自动调查到24点",
+                "click_休息"
+        ]
+    },
+    "调查_研究所": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"研究",
+              "roi" : [911,179,305,107]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "调查:研究所",
+        "next": ["click_现在就去",
+                "click_自动调查到24点",
+                "click_休息"
+        ]
+    },
+    "调查_舵手会馆": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"舵手",
+               "roi" : [477,291,305,111]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "调查:舵手会馆",
+        "next": ["click_现在就去",
+                "click_自动调查到24点",
+                "click_休息"
+        ]
+    },
+    "调查_高塔": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"高塔",
+                "roi" : [242,45,465,250]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "调查:高塔",
+        "next": ["click_现在就去",
+                "click_自动调查到24点",
+                "click_休息"
+        ]
+    },
+    "click_休息": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"休息",
+                "roi" : [636,457,526,224]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "click_休息",
+        "next": ["神陨_休息汽车旅馆"
+        ]
+    },
+    "click_现在就去": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"现在就去",
+                "roi" : [636,457,526,224]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "click_现在就去",
+        "next": ["check_调查完成"
+        ]
+    },
+    "click_自动调查到24点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"自动调查",
+                "roi" : [688,395,263,148]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "click_自动调查到24点",
+        "next": ["check_调查完成"
+        ]
+    },
+    "check_调查完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"调查完成",
+                "roi" : [544,304,205,80]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "check_调查完成",
+        "next": [
+            "收下信息",
+            "自动阅读主线提示",
+        {"name":"click_对话_左框框","jump_back": true},
+        // {"name":"click_对话_右框框","jump_back": true},
+        {"name":"click_调查完成二次点触","jump_back": true}
+        ]
+    },
+    "click_对话_左框框": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target": [710,537,137,54]}
+        },
+        "focus": "click_对话_左框框",
+        "next": [
+        ]
+    },
+    "click_对话_右框框": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target": [955,539,76,44]}
+        },
+        "focus": "click_对话_右框框",
+        "next": [
+        ]
+    },
+    "click_调查完成二次点触": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"调查完成",
+                "roi" : [544,304,205,80]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "click_调查完成二次点触",
+        "next": [
+        ]
+    },
+    "神陨_休息汽车旅馆": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"汽车旅馆",
+                "roi" : [405,330,193,107]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "神陨_休息汽车旅馆",
+        "next": ["确认选择"
+        ]
+    },
+    "确认选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"确认选择",
+               "roi" : [608,407,355,209]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "确认选择",
+        "next": [
+        ]
+    },
+    "自动阅读主线提示": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"阅读主线",
+                "roi" : [391,276,507,130]
+        }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "提示:可继续阅读主线",
+        "next": ["click取消_阅读主线"
+        ]
+    },
+    "收下信息": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"收下信息",
+                "roi" : [813,451,359,225]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "收下信息",
+        "next": ["收下新记忆",
+            "神陨调查_点击空白处继续"
+        ]
+    },
+    "收下新记忆": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"收下信息",
+               "roi" : [659,501,235,116]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "收下新记忆",
+        "next": ["神陨调查_点击空白处继续"
+        ]
+    },
+    "click取消_阅读主线": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"取消",
+                "roi" : [369,431,214,75]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "神陨调查_click取消_阅读主线",
+        "next": [
+        ]
+    },
+    "神陨调查_点击空白处继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {"expected":"空白处",
+                "roi" : [464,541,370,179]
+        }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "神陨调查_点击空白处继续",
+        "next": [
+        ]
+    },
+}
