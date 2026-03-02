@@ -221,9 +221,33 @@
             "param": {}
         },
         "next": [
-            "画展申请"
+            "画展申请",
+            {"name":"retry_律政楼画展",
+            "jump_back": true    
+        }
         ],
         "focus": "律政楼画展"
+    },
+    "retry_律政楼画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "律政楼"
+                ],
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "retry_律政楼画展"
     },
     "画展申请": {
         "recognition": {

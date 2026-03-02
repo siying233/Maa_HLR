@@ -163,8 +163,8 @@
                 ]
             }
         },
-        "pre_delay": 400,
-        "post_delay": 400,
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "close恭喜获得"
     },
     "退出当前页面": {
@@ -234,12 +234,34 @@
         "post_delay": 400,
         "focus": "error_邀约未完成"
     },
+    "close_系统设置": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "系统设置"
+                ],
+                "roi" : [113,40,232,143]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    42,29,42,33
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "close_系统设置"
+    },
     "close_限时活动开屏_采风": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "时间"
+                    "时间","活动"
                 ],
                 "roi": [
                     201,

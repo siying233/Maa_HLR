@@ -19,8 +19,8 @@
             "type": "Click",
             "param": {}
         },
-        "pre_delay": 400,
-        "post_delay": 400,
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "返回到上一级"
     },
     "退回到主界面": {
@@ -136,7 +136,12 @@
             {
                 "name": "退回到主界面",
                 "jump_back": true
+            },
+            {
+                "name": "close_系统设置",
+                "jump_back": true
             }
+
         ],
         "pre_delay": 400,
         "post_delay": 400
@@ -165,11 +170,36 @@
             {
                 "name": "close恭喜获得",
                 "jump_back": true
+            },
+            {
+                "name": "月签到计划",
+                "jump_back": true
+            },
+            {
+                "name": "日常计划"
             }
         ],
         "pre_delay": 600,
         "post_delay": 600,
         "focus": "点击日常"
+    },
+    "日常计划": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "routine_logo.png"
+                ],
+                "roi" : [0,279,123,159]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 800,
+        "post_delay": 400,
+        "focus": "日常计划"
     },
     "点击_一键领取": {
         "recognition": {

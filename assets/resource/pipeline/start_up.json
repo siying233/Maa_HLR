@@ -265,8 +265,8 @@
             "type": "DoNothing",
             "param": {}
         },
-        "pre_delay": 400,
-        "post_delay": 400,
+        "pre_delay": 800,
+        "post_delay": 800,
         "next": [
             "close恭喜获得",
             "月签到领取钻石",
@@ -431,6 +431,9 @@
             "type": "Click",
             "param": {}
         },
-        "focus": "退出签到界面"
+        "focus": "退出签到界面",
+        "post_delay": 600,
+        "pre_delay": 600
+
     }
 }

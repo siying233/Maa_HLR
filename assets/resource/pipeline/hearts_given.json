@@ -14,7 +14,13 @@
             {
                 "name": "关闭当前界面",
                 "jump_back": true
-            }
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            },
+            {"name": "close_限时活动开屏_采风",
+                "jump_back": true}
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -43,11 +49,47 @@
             {
                 "name": "好友加载中",
                 "jump_back": true
+            },
+            {
+                "name": "好友_重试",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
             }
         ],
         "pre_delay": 800,
         "post_delay": 800,
         "focus": "好友"
+    },
+    "好友_重试": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "好友"
+                ],
+                "roi": [
+                    1120,
+                    618,
+                    160,
+                    102
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "好友_重试"
     },
     "好友加载中": {
         "recognition": {

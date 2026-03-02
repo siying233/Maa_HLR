@@ -161,8 +161,10 @@
             "灵感_儿童画",
             "灵感_星星",
             "灵感_天体观测",
+            "灵感_遥远的星空",
             "灵感_舞会",
-            "灵感_歌剧剪影"
+            "灵感_歌剧剪影",
+            "灵感_人气歌星"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -359,7 +361,7 @@
             "param": {}
         },
         "next": [
-            "target_音符"
+            "target1_音符"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -410,6 +412,31 @@
         },
         "next": [
             "target1_观测"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_遥远的星空": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "遥远的星空"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_火箭"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -596,6 +623,31 @@
             "param": {
                 "expected": [
                     "歌剧剪影"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_歌唱"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_人气歌星": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "人气歌星"
                 ],
                 "roi": [
                     11,
@@ -1198,7 +1250,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/lipstick.png"
+                    "scratch_sprits/lipstick.png",
+                    "scratch_sprits/lipstick_pink_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -1361,6 +1414,88 @@
         "pre_delay": 0,
         "post_delay": 30,
         "focus": "target1_观测"
+    },
+    "target1_火箭": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/rocket_middle.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_外星人"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_火箭"
+    },
+    "target2_外星人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/alien_big.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_星球"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target2_外星人"
+    },
+    "target3_星球": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/saturn.png",
+                    "scratch_sprits/saturn_big.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_星球end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_星球"
+    },
+    "target3_星球end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/saturn.png",
+                    "scratch_sprits/saturn_big.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": [
+            "确定灵感绘制"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_星球end"
     },
     "target1_海浪": {
         "recognition": {
@@ -1646,7 +1781,7 @@
         "post_delay": 30,
         "focus": "target3_琴键end"
     },
-    "target_音符": {
+    "target1_音符": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1660,13 +1795,13 @@
             "param": {}
         },
         "next": [
-            "target_力量"
+            "target2_力量"
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "target_音符"
+        "focus": "target1_音符"
     },
-    "target_力量": {
+    "target2_力量": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1680,13 +1815,13 @@
             "param": {}
         },
         "next": [
-            "target_鼓"
+            "target3_鼓"
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "target_力量"
+        "focus": "target2_力量"
     },
-    "target_鼓": {
+    "target3_鼓": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1700,13 +1835,13 @@
             "param": {}
         },
         "next": [
-            "target_鼓end"
+            "target3_鼓end"
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "target_鼓"
+        "focus": "target3_鼓"
     },
-    "target_鼓end": {
+    "target3_鼓end": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1761,7 +1896,8 @@
             "param": {}
         },
         "next": [
-            "target3_影片"
+            "target3_影片",
+            "target3_口红"
         ],
         "pre_delay": 0,
         "post_delay": 30,
@@ -1808,5 +1944,47 @@
         "pre_delay": 0,
         "post_delay": 30,
         "focus": "target3_影片end"
+    },
+    "target3_口红": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/lipstick.png",
+                    "scratch_sprits/lipstick_pink_big.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_口红end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_口红"
+    },
+    "target3_口红end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/lipstick.png",
+                    "scratch_sprits/lipstick_pink_big.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": [
+            "确定灵感绘制"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_口红end"
     }
     }
