@@ -187,6 +187,8 @@
             "type": "Click",
             "param": {}
         },
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "退出当前页面"
     },
     "点击屏幕退出": {

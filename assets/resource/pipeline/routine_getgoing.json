@@ -124,7 +124,7 @@
             "选择去赴约"
         ],
         "pre_delay": 600,
-        "post_delay": 600,
+        "post_delay": 800,
         "focus": "相约之地选择界面"
     },
     "选择去赴约": {
@@ -151,8 +151,11 @@
             "if男主司岚",
             "if男主叶瑄",
             "if男主罗夏",
-            "if男主艾因"
+            "if男主艾因",
+            
         ],
+        "pre_delay": 600,
+        "post_delay": 800,
         "focus": "选择去赴约"
     },
     "赠送": {
@@ -186,7 +189,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "btn_close.png"
+                    "btn_close.png",
+                    "btn_close_small.png"
                 ],
                 "roi": [
                     0,

@@ -22,6 +22,7 @@
                 "name": "退出当前页面",
                 "jump_back": true
             },
+            "已经进入灵感",
             "error_请先完成邀约哦"
             
         ]
@@ -75,6 +76,25 @@
             "速写_一键收集"
         ],
         "focus": "速写_选择一个地方"
+    },
+    "已经进入灵感": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                   "相关的灵感"
+                ],
+                "roi" : [0,0,499,164]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "灵感"
+        ],
+        "focus": "已经进入灵感"
     },
     "速写_开始": {
         "recognition": {
@@ -1186,7 +1206,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png"
+                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_middle.png"
                 ],
                 "threshold": 0.6
             }
@@ -1208,7 +1229,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png"
+                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_middle.png"
                 ],
                 "threshold": 0.6
             }
@@ -1272,7 +1294,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png"
+                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
         },
@@ -1293,7 +1316,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png"
+                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
         },
@@ -1786,7 +1810,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/music.png"
+                    "scratch_sprits/music.png",
+                    "scratch_sprits/music_middle.png",
+                    "scratch_sprits/music_blue.png"
                 ],"threshold": 0.6
             }
         },
@@ -1826,7 +1852,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/drum.png"
+                    "scratch_sprits/drum.png",
+                    "scratch_sprits/drum_middle.png"
                 ],"threshold": 0.6
             }
         },
@@ -1846,7 +1873,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/drum.png"
+                    "scratch_sprits/drum.png",
+                    "scratch_sprits/drum_middle.png"
                 ],"threshold": 0.6
             }
         },
@@ -1887,7 +1915,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png"
+                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
         },
