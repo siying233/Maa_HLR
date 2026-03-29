@@ -10,6 +10,7 @@
         },
         "next": [
             "速写",
+            "速写_开始",
             {
                 "name": "校园",
                 "jump_back": true
@@ -48,9 +49,13 @@
         },
         "next": [
             "速写_选择一个地方",
-            "速写_一键收集"
+            "速写_一键收集",
+            "速写工具_不足"
         ],
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "速写"
+
     },
     "速写_选择一个地方": {
         "recognition": {
@@ -73,9 +78,12 @@
             "param": {}
         },
         "next": [
-            "速写_一键收集"
+            "速写_一键收集",
+            "速写"
         ],
-        "focus": "速写_选择一个地方"
+        "focus": "速写_选择一个地方",
+        "pre_delay": 800,
+        "post_delay": 800
     },
     "已经进入灵感": {
         "recognition": {
@@ -118,8 +126,8 @@
         "next": [
             "灵感"
         ],
-        "pre_delay": 600,
-        "post_delay": 600,
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "速写_开始"
     },
     "速写_一键收集": {
@@ -144,9 +152,27 @@
         "next": [
             "速写_开始"
         ],
-        "pre_delay": 600,
-        "post_delay": 600,
+        "pre_delay": 800,
+        "post_delay": 800,
         "focus": "速写_一键收集"
+    },
+    "速写工具_不足": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "工具不足"
+                ],
+                "roi": [376, 278, 544, 97]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "速写工具_不足"
     },
     "灵感": {
         "recognition": {
@@ -171,20 +197,25 @@
             "灵感_音乐演奏",
             "灵感_演奏的猫",
             "灵感_架子鼓",
+            "灵感_读书的猫",
             "灵感_出庭律师",
             "灵感_上班族",
             "灵感_侦探",
+            "灵感_摄影师",
             "灵感_沙滩风光",
             "灵感_海上风帆",
             "灵感_海边阅读",
             "灵感_海边度假",
+            "灵感_海边钓鱼",
             "灵感_儿童画",
             "灵感_星星",
             "灵感_天体观测",
             "灵感_遥远的星空",
+            "灵感_星座传说",
             "灵感_舞会",
             "灵感_歌剧剪影",
-            "灵感_人气歌星"
+            "灵感_人气歌星",
+            "灵感_怀旧的声音"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -461,6 +492,31 @@
         "pre_delay": 600,
         "post_delay": 600
     },
+    "灵感_星座传说": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "星座传说"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_星座"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
     "灵感_海边度假": {
         "recognition": {
             "type": "OCR",
@@ -482,6 +538,31 @@
         },
         "next": [
             "target1_海边度假的海浪"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_海边钓鱼": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "海边钓鱼"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_海浪"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -557,6 +638,31 @@
         },
         "next": [
             "target1_乐谱架"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_读书的猫": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "读书的猫"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_猫爪"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -637,6 +743,31 @@
         "pre_delay": 600,
         "post_delay": 600
     },
+    "灵感_摄影师": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "摄影师"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_搜查"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
     "灵感_歌剧剪影": {
         "recognition": {
             "type": "OCR",
@@ -683,6 +814,31 @@
         },
         "next": [
             "target1_歌唱"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_怀旧的声音": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "怀旧的声音"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_怀旧音乐"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -1000,7 +1156,8 @@
             "param": {}
         },
         "next": [
-            "target2_档案"
+            "target2_档案",
+            "target2_相机"
         ],
         "pre_delay": 0,
         "post_delay": 30,
@@ -1028,6 +1185,28 @@
         "pre_delay": 0,
         "post_delay": 30,
         "focus": "target2_档案"
+    },
+    "target2_相机": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/camera.png"
+                ],
+                "threshold": 0.6,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_影片"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target2_相机"
     },
     "target3_侦探眼镜": {
         "recognition": {
@@ -1078,7 +1257,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/wave.png"
+                    "scratch_sprits/wave.png",
+                    "scratch_sprits/wave_big.png",
+                    "scratch_sprits/wave_mid.png"
                 ],
                 "threshold": 0.6
             }
@@ -1163,6 +1344,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/paw.png",
+                    "scratch_sprits/paw_big.png",
                     "scratch_sprits/paw_purple.png"
                 ],
                 "threshold": 0.6
@@ -1173,7 +1355,8 @@
             "param": {}
         },
         "next": [
-            "target2_吉他"
+            "target2_吉他",
+            "target2_笔"
         ],
         "pre_delay": 0,
         "post_delay": 30,
@@ -1207,6 +1390,7 @@
                 "template": [
                     "scratch_sprits/music.png",
                     "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_middle.png"
                 ],
                 "threshold": 0.6
@@ -1230,6 +1414,7 @@
                 "template": [
                     "scratch_sprits/music.png",
                     "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_middle.png"
                 ],
                 "threshold": 0.6
@@ -1294,7 +1479,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_blue.png",                    
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
@@ -1316,7 +1502,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_blue.png",                    
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
@@ -1374,6 +1561,47 @@
         "post_delay": 30,
         "focus": "target2_土星"
     },
+    "target1_星座": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/constellation_big.png"             
+                    ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_天空"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_星座"
+    },
+    "target2_天空": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/cloud_mid.png",
+                    "scratch_sprits/cloud_small.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_星星"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target2_天空"
+    },
     "target3_星星": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1382,7 +1610,6 @@
                     "scratch_sprits/stars.png",
                     "scratch_sprits/stars_small.png"
                 ],"threshold": 0.6
-                // ,"green_mask":true
             }
         },
         "action": {
@@ -1527,6 +1754,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/wave.png",
+                    "scratch_sprits/wave_mid.png",
                     "scratch_sprits/wave_big.png"
                 ],"threshold": 0.6
             }
@@ -1558,7 +1786,8 @@
         },
         "next": [
             "target3_贝壳",
-            "target3_力量"
+            "target3_力量",
+            "target3_鲨鱼"
         ],
         "pre_delay": 0,
         "post_delay": 30,
@@ -1603,6 +1832,49 @@
         "pre_delay": 0,
         "post_delay": 30,
         "focus": "target3_力量end"
+    },
+        "target3_鲨鱼": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/shark.png",
+                    "scratch_sprits/shark_middle.png"
+                ],
+                "threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_鲨鱼end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_鲨鱼"
+    },
+    "target3_鲨鱼end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/shark.png",
+                    "scratch_sprits/shark_middle.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": [
+            "确定灵感绘制"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_鲨鱼end"
     },
     "target3_贝壳": {
         "recognition": {
@@ -1724,6 +1996,87 @@
         "post_delay": 30,
         "focus": "target3_秤end"
     },
+    "target1_怀旧音乐": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/music2.png",
+                    "scratch_sprits/music2_pink.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_钟表"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_怀旧音乐"
+    },
+    "target2_钟表": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/clock_small.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_唱片"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target2_钟表"
+    },
+    "target3_唱片": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/circle_mid.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchMove",
+            "param": {}
+        },
+        "next": [
+            "target3_唱片end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_唱片"
+    },
+    "target3_唱片end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/circle_mid.png"
+                ],"threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchUp",
+            "param": {}
+        },
+        "next": [
+            "确定灵感绘制"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target3_唱片end"
+    },
     "target1_乐谱架": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1811,7 +2164,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_middle.png",
+                    "scratch_sprits/music_middle.png",                   
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_blue.png"
                 ],"threshold": 0.6
             }
@@ -1894,7 +2248,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/sing_small.png"
+                    "scratch_sprits/sing_small.png",
+                    "scratch_sprits/sing_mid.png"
                 ],"threshold": 0.6
             }
         },
@@ -1915,7 +2270,8 @@
             "param": {
                 "template": [
                     "scratch_sprits/music.png",
-                    "scratch_sprits/music_blue.png",
+                    "scratch_sprits/music_blue.png",                    
+                    "scratch_sprits/music_mid.png",
                     "scratch_sprits/music_middle.png"
                 ],"threshold": 0.6
             }
@@ -1938,6 +2294,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/film.png",
+                    "scratch_sprits/film_mid.png",
                     "scratch_sprits/film_small.png"
                 ],"threshold": 0.6
             }
@@ -1959,6 +2316,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/film.png",
+                    "scratch_sprits/film_mid.png",
                     "scratch_sprits/film_small.png"
                 ],"threshold": 0.6
             }

@@ -1,12 +1,41 @@
 {
-    "点击猫": {
+    "猫罐头_开始": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "DirectHit",
+            "param": {}
+
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "已在猫界面",
+            "猫馈赠",
+            "猫补签",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ],
+        "focus": "季卡_开始"
+    },
+    "已在猫界面": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "template": [
-                    "cat.png"
-                ],
-                "roi": [
+                "expected":"笔记",
+                "roi":[452, 453, 167, 72]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
                     337,
                     303,
                     187,
@@ -14,26 +43,31 @@
                 ]
             }
         },
+        "next": ["猫馈赠",
+                "猫补签"]
+    },
+    "猫馈赠": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["馈赠"],
+                "roi": [661, 142, 459, 272]
+            }
+        },
         "action": {
             "type": "Click",
             "param": {}
         },
         "next": [
-            "猫"
-        ],
-        "focus": "点击猫"
+            "来自猫的馈赠"
+        ]
     },
-    "猫": {
+    "猫补签": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
-                "template": "cat_main.png",
-                "roi": [
-                    489,
-                    438,
-                    204,
-                    229
-                ]
+                "expected": ["免费补签"],
+                "roi": [661, 142, 459, 272]
             }
         },
         "action": {
@@ -42,8 +76,20 @@
         },
         "next": [
             "猫罐头免费补签",
-            "来自猫的馈赠"
         ]
+    },
+    "猫补签2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["免费补签"],
+                "roi": [661, 142, 459, 272]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        }
     },
     "猫罐头免费补签": {
         "recognition": {
@@ -62,15 +108,15 @@
             "type": "Click",
             "param": {}
         },
-        "next": [],
+        "next": ["另一罐头"],
         "focus": "猫罐头免费补签"
     },
     "来自猫的馈赠": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
-                "template": [
-                    "btn_receive.png"
+                "expected": [
+                    "领取"
                 ],
                 "roi": [
                     790,
@@ -84,7 +130,45 @@
             "type": "Click",
             "param": {}
         },
-        "next": [],
+        "next": ["另一罐头"],
         "focus": "来自猫的馈赠"
+    },
+    "来自猫的馈赠2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ],
+                "roi": [
+                    790,
+                    303,
+                    207,
+                    145
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "来自猫的馈赠"
+    },
+    "另一罐头": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "can.png"
+                ],
+                "roi": [749, 557, 366, 107]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["猫补签2", "来自猫的馈赠2"],
+        "focus": "另一罐头"
     }
 }

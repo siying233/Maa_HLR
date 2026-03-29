@@ -5,7 +5,7 @@
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
     "name": "MaaHLR",
-    "description": "MaaHLR 海螺肉小助手，开发中~嘿嘿嘿",
+    "description": "MaaHLR 海螺肉小助手，开发中~",
     // "contact": "QQ群: 123456789",
     "license": "MIT",
     "welcome": "首次使用！欢迎使用 MAA HLR!",
@@ -70,7 +70,7 @@
             "name": "💐赠人玫瑰",
             "entry": "赠人玫瑰开始",
             "label": "赠人玫瑰-日常",
-            "description": "赠送好友体力",
+            // "description": "赠送好友体力",
             "default_check": true
         },
         {
@@ -89,7 +89,7 @@
             "name": "📅日程",
             "entry": "日程启动",
             "label": "日程-日常",
-            "description": "安排当天日常，优先邀请男主，随机邀请其他角色",
+            // "description": "安排当天日常，优先邀请男主，随机邀请其他角色",
             "default_check": true,
             "option": [
                 "日程二选择对象"
@@ -112,6 +112,16 @@
             "entry": "日常领取",
             "label": "奖励领取-日常收尾",
             "default_check": true
+        },
+        {
+            "name": "季卡领取",
+            "entry": "季卡_开始",
+            "default_check": false
+        },
+        {
+            "name": "猫罐头领取",
+            "entry": "猫罐头_开始",
+            "default_check": false
         }
         // ,{
         //     "name": "",

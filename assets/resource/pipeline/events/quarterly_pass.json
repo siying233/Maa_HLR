@@ -1,0 +1,92 @@
+{
+    "季卡_开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "点击_活动",
+            "季旅"
+        ],
+        "focus": "季卡_开始"
+    },
+    "点击_活动": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ["event_btn.png"],
+                "roi":[221, 590, 1052, 129]
+            }
+
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "季旅"
+        ],
+        "focus": "点击_活动"
+    },
+    "季旅": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "季旅",
+                "roi":[0, 81, 247, 566]
+            }
+
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "季旅_今日"
+        ],
+        "focus": "季旅"
+    },
+    "季旅_今日": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "今日可领",
+                "roi":[748, 218, 306, 143]
+            }
+
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target":[798, 497, 218, 92]
+            }
+        },
+        "next": [
+            "close恭喜获得"
+        ],
+        "focus": "今日可领"
+    }
+    // ,
+    // "季旅_领取": {
+    //     "recognition": {
+    //         "type": "OCR",
+    //         "param": {
+    //             "expected": "领取",
+    //             "roi":[798, 497, 218, 92]
+    //         }
+    //     },
+    //     "action": {
+    //         "type": "Click",
+    //         "param": {}
+    //     },
+    //     "next":[
+    //         "close恭喜获得"
+    //     ],
+    //     "focus": "季旅_领取"
+    // }
+}
