@@ -69,13 +69,13 @@
   <img src="https://contrib.rocks/image?repo=siying233/Maa_HLR" />
 </a>
 
-
+<!-- 
 ### 开发交流群
 
 目前该项目还有很多不足，欢迎小画家交流反馈，我会尽力解答和支持。
 
 Maa HLR 项目交流QQ群：789122189
-
+ -->
 
 
 
