@@ -113,16 +113,16 @@
             "label": "奖励领取-日常收尾",
             "default_check": true
         },
-        {
-            "name": "季卡领取",
-            "entry": "季卡_开始",
-            "default_check": false
-        },
-        {
-            "name": "猫罐头领取",
-            "entry": "猫罐头_开始",
-            "default_check": false
-        }
+        // {
+        //     "name": "季卡领取",
+        //     "entry": "季卡_开始",
+        //     "default_check": false
+        // },
+        // {
+        //     "name": "猫罐头领取",
+        //     "entry": "猫罐头_开始",
+        //     "default_check": false
+        // }
         // ,{
         //     "name": "",
         //     "entry": "",

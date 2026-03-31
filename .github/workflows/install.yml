@@ -116,70 +116,21 @@ jobs:
           python ./install.py ${{ needs.meta.outputs.tag }}
           cd ..
 
-          if [ -d "MFA" ] && [ "${{ matrix.os }}" != "android" ]; then
-            echo "Copying MFA files to install directory..."
-            mkdir -p install
-            rsync -av --ignore-existing MFA/ install/
+          if [[ "${{ matrix.os }}" != "android" ]]; then
+            if [ -d "MFA" ]; then
+              echo "Copying MFA files to install directory..."
+              mkdir -p install
+              rsync -av --ignore-existing MFA/ install/
+            else
+              echo "MFA directory not found, skipping copy."
+            fi
+            if [[ "${{ matrix.os }}" == "win" ]]; then
+              mkdir -p install
+              cp -v "tools/DependencySetup_依赖库安装.bat" install/
+            fi
           else
-            echo "MFA directory not found, skipping copy."
+            echo "Skipping copy MFA for Android."
           fi
-          if [[ "${{ matrix.os }}" == "win" ]]; then
-            mkdir -p install
-            cp -v "tools/DependencySetup_依赖库安装.bat" install/
-          fi
-
-      # Windows x64：在 Windows runner 上换 exe 图标（见 package_win_exe_icon）；此处上传中间产物
-      - uses: actions/upload-artifact@v4
-        if: matrix.os == 'win' && matrix.arch == 'x86_64'
-        with:
-          name: Maa_HLR-${{ matrix.os }}-${{ matrix.arch }}-for-exe-icon
-          path: "install"
-
-      - uses: actions/upload-artifact@v4
-        if: matrix.os != 'win' || matrix.arch != 'x86_64'
-        with:
-          name: Maa_HLR-${{ matrix.os }}-${{ matrix.arch }}
-          path: "install"
-
-  # 使用 assets/logo.png 生成 ICO，并用 rcedit 写入 MFAAvalonia 主程序（如 Avalonia.exe）
-  package_win_exe_icon:
-    needs: [meta, install]
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download staged Windows x64 build
-        uses: actions/download-artifact@v4
-        with:
-          name: Maa_HLR-win-x86_64-for-exe-icon
-          path: install
-
-      - name: Set exe icon from logo
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [[ ! -f assets/logo.png ]]; then
-            echo "请提交 assets/logo.png（方形 PNG），用于 Windows 可执行文件图标。"
-            exit 1
-          fi
-          choco install imagemagick -y
-          for size in 512 256 128 64 48 32 24 16; do
-            magick assets/logo.png -resize ${size}x${size} icon-${size}.png
-          done
-          magick icon-512.png icon-256.png icon-128.png icon-64.png icon-48.png icon-32.png icon-24.png icon-16.png maa_hlr.ico
-          curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
-          if [[ -f install/Avalonia.exe ]]; then
-            EXE="install/Avalonia.exe"
-          elif [[ -f install/MFAAvalonia.exe ]]; then
-            EXE="install/MFAAvalonia.exe"
-          else
-            EXE=$(find install -maxdepth 1 -name '*.exe' -type f | head -1)
-          fi
-          if [[ -z "${EXE:-}" ]]; then
-            echo "install 目录下未找到 .exe"; ls -la install; exit 1
-          fi
-          ./rcedit.exe "$EXE" --set-icon "maa_hlr.ico"
-          echo "Icon applied to: $EXE"
 
       - uses: actions/upload-artifact@v4
         with:
@@ -219,10 +170,9 @@ jobs:
       - run: |
           cd assets
           for f in *; do
-            case "$f" in *-for-exe-icon) continue ;; esac
-            (cd "$f" && zip -r "../$f-${{ needs.meta.outputs.tag }}.zip" .)
+            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-
+          
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*
@@ -230,3 +180,15 @@ jobs:
           body: ${{ needs.changelog.outputs.release_body }}
           draft: false
           prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
+
+        # Mirror酱为第三方分发服务，新项目默认关闭
+        # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
+        # https://mirrorchyan.com/
+      - name: Trigger MirrorChyanUploading
+        if: false
+        shell: bash
+        run: |
+          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release.yml -f tag=${{ needs.meta.outputs.tag }}
+          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release_note.yml -f tag=${{ needs.meta.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

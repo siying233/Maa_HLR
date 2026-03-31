@@ -11,7 +11,15 @@
         },
         "next": [
             "点击_活动",
-            "季旅"
+            "季旅",
+            {
+                "name": "退回到主界面",
+                "jump_back": true
+            },
+            {
+                "name": "close_系统设置",
+                "jump_back": true
+            }
         ],
         "focus": "季卡_开始"
     },

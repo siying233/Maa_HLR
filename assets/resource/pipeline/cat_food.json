@@ -46,6 +46,22 @@
         "next": ["猫馈赠",
                 "猫补签"]
     },
+    "猫馈赠尚未开启": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["尚未开启"],
+                "roi": [661, 142, 459, 272]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "来自猫的馈赠"
+        ]
+    },
     "猫馈赠": {
         "recognition": {
             "type": "OCR",

@@ -109,6 +109,30 @@
         "focus": "已进入游戏check",
         "next": []
     },
+    "check_学院公告弹出": {
+        "recognition": {
+           "type": "OCR",
+            "param": {
+                "expected": [
+                    "学院公告"
+                ],
+                "roi": [
+                    434,
+                    6,
+                    458,
+                    138
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 600,
+        "post_delay": 600,
+        "focus": "check_学院公告弹出",
+        "next": []
+    },
     "点击屏幕开始": {
         "recognition": {
             "type": "OCR",
@@ -129,6 +153,8 @@
             "param": {}
         },
         "next": [
+            {"jump_back": true,
+            "name": "check_学院公告弹出"},
             "开始游戏"
         ],
         "pre_delay": 600,
