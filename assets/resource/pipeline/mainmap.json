@@ -135,13 +135,13 @@
         "next": [
             "点击日常",
             {
-                "name": "退回到主界面",
+                "name": "close_系统设置",
                 "jump_back": true
             },
             {
-                "name": "close_系统设置",
+                "name": "退回到主界面",
                 "jump_back": true
-            }
+            },
 
         ],
         "pre_delay": 400,
