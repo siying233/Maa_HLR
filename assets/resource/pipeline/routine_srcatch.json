@@ -48,6 +48,7 @@
             "param": {}
         },
         "next": [
+            "文具兑换",
             "速写_选择一个地方",
             "速写_一键收集",
             "速写工具_不足"
@@ -55,6 +56,27 @@
         "pre_delay": 800,
         "post_delay": 800,
         "focus": "速写"
+
+    },
+    "文具兑换": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "文具券"
+                ],
+                "roi": [510, 375, 271, 45]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+        ],
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "请用文具劵兑换"
 
     },
     "速写_选择一个地方": {

@@ -23,6 +23,21 @@
         ],
         "focus": "季卡_开始"
     },
+    "季卡_结束": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+           
+        ],
+        "focus": "季卡_结束"
+    },
     "点击_活动": {
         "recognition": {
             "type": "TemplateMatch",
@@ -55,7 +70,9 @@
             "param": {}
         },
         "next": [
-            "季旅_今日"
+            {"name":"季旅_今日","jump_back":true},
+            {"name":"季旅_今日补领","jump_back":true},
+            "季卡_结束"
         ],
         "focus": "季旅"
     },
@@ -71,7 +88,27 @@
         "action": {
             "type": "Click",
             "param": {
-                "target":[798, 497, 218, 92]
+                "target":[873, 536, 64, 24]
+            }
+        },
+        "next": [
+            "close恭喜获得"
+        ],
+        "focus": "今日可领"
+    },
+    "季旅_今日补领": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "可补领",
+                "roi":[748, 218, 306, 143]
+            }
+
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target":[873, 536, 64, 24]
             }
         },
         "next": [

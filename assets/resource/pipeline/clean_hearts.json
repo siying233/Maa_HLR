@@ -1,0 +1,136 @@
+{
+    "清理体力开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "已在练习主界面",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 600,
+        "post_delay": 600,
+        "focus": "清理体力开始"
+    },
+    "已在练习主界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"练习",
+                "roi":[981, 405, 158, 85]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["刷经验_星间剧场"]
+        
+    },
+    "刷经验_星间剧场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"星间剧场"
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["已进入_星间剧场"],
+        "focus": "刷经验_星间剧场"
+    },
+    "已进入_星间剧场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"星间剧场",
+                "roi":[614, 101, 452, 135]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target":[972, 539, 68, 18]
+            }
+        },
+        "next": ["开始作战"],
+    },
+    "开始作战": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"开始作战",
+                "roi":[577, 503, 132, 44]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["选择助战画灵"],
+        "focus": "开始作战"
+    },
+    "选择助战画灵": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friend_soul.png"
+                ],
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["助战选择"],
+        "focus": "选择助战画灵"
+    },
+     "助战选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"助战选择",
+                "roi":[130, 80, 215, 71]
+                }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {
+            }
+        },
+        "next": ["选择助战画灵"],
+        "focus": "助战选择中"
+    },
+     "画灵选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":["乐","生","冰","影","光","天","兰"],
+                "roi":[148, 225, 974, 404]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": [],
+        "focus": "助战选择中"
+    },
+}

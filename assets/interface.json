@@ -128,6 +128,11 @@
         //     "entry": "神陨纪元start",
         //     "default_check": false
         // }
+        // {
+        //     "name": "清理体力",
+        //     "entry": "清理体力开始",
+        //     "default_check": false
+        // }
         // ,{
         //     "name": "",
         //     "entry": "",

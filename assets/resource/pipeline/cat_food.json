@@ -10,7 +10,7 @@
             "param": {}
         },
         "next": [
-            "已在猫界面",
+            "已在猫住界面",
             "猫馈赠",
             "猫补签",
             {
@@ -22,9 +22,9 @@
                 "jump_back": true
             }
         ],
-        "focus": "季卡_开始"
+        "focus": "猫罐头_开始"
     },
-    "已在猫界面": {
+    "已在猫住界面": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -35,12 +35,7 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": [
-                    337,
-                    303,
-                    187,
-                    173
-                ]
+                "target": [410, 390, 22, 13]
             }
         },
         "next": ["猫馈赠",
@@ -103,8 +98,8 @@
             }
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Click",
+            "param": {"target":[873,371,24,13]}
         }
     },
     "猫罐头免费补签": {
