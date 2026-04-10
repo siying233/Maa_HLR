@@ -171,6 +171,7 @@
             "param": {}
         },
         "next": [
+            "适龄提示",
             {
                 "name": "close活动限时卡池概率提升",
                 "jump_back": true
@@ -203,7 +204,11 @@
                 "name": "等等开始",
                 "jump_back": true
             },
-            "已进入游戏check"
+            "已进入游戏check",
+            {
+                "name": "close其他弹窗",
+                "jump_back": true
+            }
         ],
         "pre_delay": 6000,
         "post_delay": 600

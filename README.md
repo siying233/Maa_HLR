@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img alt="LOGO" src="maahlr_2026-02-25.png" width="256" height="256" />
+</p>
 
 
 

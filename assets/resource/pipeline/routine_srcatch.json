@@ -209,6 +209,7 @@
             "灵感_海边钓鱼",
             "灵感_儿童画",
             "灵感_星星",
+            "灵感_星际童话",
             "灵感_天体观测",
             "灵感_遥远的星空",
             "灵感_星座传说",
@@ -413,6 +414,31 @@
         },
         "next": [
             "target1_音符"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_星际童话": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "星际童话"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_火箭"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -1056,6 +1082,7 @@
             
                 "template": [
                     "scratch_sprits/run.png",
+                    "scratch_sprits/run_big.png",
                     "scratch_sprits/run_pink.png"
                 ],
                 "threshold": 0.6
@@ -1525,6 +1552,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/run.png",
+                    "scratch_sprits/run_big.png",
                     "scratch_sprits/run_pink.png"
                 ],"threshold": 0.6
             }
@@ -1671,7 +1699,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/rocket_middle.png"
+                    "scratch_sprits/rocket_middle.png",
+                    "scratch_sprits/rocket_small.png"
                 ],"threshold": 0.6
             }
         },
@@ -2123,7 +2152,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/keyboard.png"
+                    "scratch_sprits/keyboard.png",
+                    "scratch_sprits/keyboard_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -2143,7 +2173,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/keyboard.png"
+                    "scratch_sprits/keyboard.png",
+                    "scratch_sprits/keyboard_big.png"
+
                 ],"threshold": 0.6
             }
         },

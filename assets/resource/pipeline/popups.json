@@ -105,6 +105,27 @@
         "post_delay": 600,
         "focus": "close活动弹窗_强制3次"
     },
+    "close其他弹窗": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    205,
+                    589,
+                    23,
+                    21
+                ]
+            }
+        },
+        "pre_delay": 600,
+        "post_delay": 600,
+        "focus": "close其他弹窗"
+    },
     "close活动弹窗": {
         "recognition": {
             "type": "OCR",

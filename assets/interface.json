@@ -8,7 +8,7 @@
     "description": "MaaHLR 海螺肉小助手，开发中~",
     // "contact": "QQ群: 123456789",
     "license": "MIT",
-    "welcome": "首次使用！欢迎使用 MAA HLR!",
+    "welcome": "欢迎使用 MAA HLR! 首次使用须知：请确保模拟器运行中。请在模拟器中下载好官服app,并且为登录状态。\n该任务包含启动游戏、自动签到、关闭开屏等功能，若新活动更新，可能无法完成部分任务，并需要长时间等待的问题。",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/siying233/Maa_HLR",
     "version": "1.0.0",
@@ -113,14 +113,19 @@
             "label": "奖励领取-日常收尾",
             "default_check": true
         },
+        {
+            "name": "季卡领取",
+            "entry": "季卡_开始",
+            "default_check": false
+        },
+        {
+            "name": "猫罐头领取",
+            "entry": "猫罐头_开始",
+            "default_check": false
+        },
         // {
-        //     "name": "季卡领取",
-        //     "entry": "季卡_开始",
-        //     "default_check": false
-        // },
-        // {
-        //     "name": "猫罐头领取",
-        //     "entry": "猫罐头_开始",
+        //     "name": "神陨纪元_城市调查",
+        //     "entry": "神陨纪元start",
         //     "default_check": false
         // }
         // ,{
