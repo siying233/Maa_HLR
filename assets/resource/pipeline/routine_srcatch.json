@@ -101,11 +101,57 @@
         },
         "next": [
             "速写_一键收集",
-            "速写"
+            "速写",
+            {"name":"场景事件","jump_back":true}
         ],
         "focus": "速写_选择一个地方",
         "pre_delay": 800,
         "post_delay": 800
+    },
+    "场景事件": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                   "场景事件"
+                ],
+                "roi" : [3, 12, 240, 70]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            {"name":"click_对话_左框框","jump_back": true},
+            "场景事件状态退出"
+        ],
+        "focus": "进入场景事件"
+    },
+    "场景事件状态退出": {
+         "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_back_small_blue.png",
+                    "btn_back_small_blue_sky.png"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    186,
+                    180
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            
+        ],
+        "focus": "进入场景事件"
     },
     "已经进入灵感": {
         "recognition": {
@@ -220,6 +266,9 @@
             "灵感_演奏的猫",
             "灵感_架子鼓",
             "灵感_读书的猫",
+            "灵感_读书的人",
+            "灵感_法律课堂",
+            "灵感_正义的象征",
             "灵感_出庭律师",
             "灵感_上班族",
             "灵感_侦探",
@@ -715,6 +764,80 @@
         "pre_delay": 600,
         "post_delay": 600
     },
+    "灵感_读书的人": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "读书的人"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_读书人的眼镜"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_法律课堂": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "法律课堂"],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_法律"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_正义的象征": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                   "正义的象征"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_法官"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
     "灵感_出庭律师": {
         "recognition": {
             "type": "OCR",
@@ -811,7 +934,7 @@
             "param": {}
         },
         "next": [
-            "target1_搜查"
+            "target1_发现"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -1029,15 +1152,41 @@
         "post_delay": 30,
         "focus": "儿童画-target1_小熊"
     },
+     "target1_法律": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+            
+                "template": [
+                    "scratch_sprits/libra.png",
+                    "scratch_sprits/libra_mid.png" 
+                ],
+                "threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_笔"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_法律"
+    },
     "target2_笔": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/pen.png"
+                    "scratch_sprits/pen.png",
+                    "scratch_sprits/pen_mid.png",
+                    "scratch_sprits/pen_small.png",
+                    "scratch_sprits/pen_big.png"
                 ],
                 "threshold": 0.6,
-                "green_mask": true
+                // "green_mask": true
             }
         },
         "action": {
@@ -1049,7 +1198,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "儿童画-target2_笔"
+        "focus": "target2_笔"
     },
     "target3_阅读": {
         "recognition": {
@@ -1057,6 +1206,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/read.png",
+                    "scratch_sprits/read_pink.png",
                     "scratch_sprits/read_mid.png"
                 ],
                 "threshold": 0.6,
@@ -1072,7 +1222,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "儿童画-target3_阅读"
+        "focus": "target3_阅读"
     },
     "target3_阅读end": {
         "recognition": {
@@ -1080,6 +1230,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/read.png",
+                    "scratch_sprits/read_pink.png",
                     "scratch_sprits/read_mid.png"
                 ],
                 "threshold": 0.6,
@@ -1095,7 +1246,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 30,
-        "focus": "儿童画-target3_阅读end"
+        "focus": "target3_阅读end"
     },
     "target1_奔跑": {
         "recognition": {
@@ -1127,6 +1278,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/documents.png",
+                    "scratch_sprits/documents_mid.png",
                     "scratch_sprits/documents_big.png"
                 ],
                 "threshold": 0.6,
@@ -1188,6 +1340,29 @@
         "post_delay": 30,
         "focus": "上班族-target3_公文包end"
     },
+    "target1_发现": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+            
+                "template": [
+                    "scratch_sprits/research.png",
+                    "scratch_sprits/research_pink_big.png"
+                ],
+                "threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_相机"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_发现"
+    },
     "target1_搜查": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1218,6 +1393,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/documents.png",
+                    "scratch_sprits/documents_mid.png",
                     "scratch_sprits/documents_big.png"
                 ],
                 "threshold": 0.6,
@@ -1240,7 +1416,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/camera.png"
+                    "scratch_sprits/camera.png",
+                    "scratch_sprits/camera_big.png"
                 ],
                 "threshold": 0.6,
                 "green_mask": true
@@ -1263,6 +1440,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/glasses.png",
+                    "scratch_sprits/glasses_big.png"
                 ],
                 "threshold": 0.6,
                 "green_mask": true
@@ -1284,7 +1462,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/glasses.png"
+                    "scratch_sprits/glasses.png",
+                    "scratch_sprits/glasses_big.png",
                 ],
                 "threshold": 0.6,
                 "green_mask": true
@@ -1329,7 +1508,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/read.png"
+                    "scratch_sprits/read.png",
+                    "scratch_sprits/read_pink.png",
+                    "scratch_sprits/read_mid.png"
                 ],
                 "threshold": 0.6
             }
@@ -1350,7 +1531,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/glasses.png"
+                    "scratch_sprits/glasses.png",
+                    "scratch_sprits/glasses_big.png"
                 ],
                 "threshold": 0.6
             }
@@ -1371,7 +1553,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/glasses.png"
+                    "scratch_sprits/glasses.png",
+                    "scratch_sprits/glasses_big.png"
                 ],
                 "threshold": 0.6
             }
@@ -1410,6 +1593,28 @@
         "pre_delay": 0,
         "post_delay": 30,
         "focus": "target1_猫爪"
+    },
+    "target1_读书人的眼镜": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "scratch_sprits/glasses.png",
+                    "scratch_sprits/glasses_big.png"
+                ],
+                "threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "TouchDown",
+            "param": {}
+        },
+        "next": [
+            "target2_笔"
+        ],
+        "pre_delay": 0,
+        "post_delay": 30,
+        "focus": "target1_读书人的眼镜"
     },
     "target2_吉他": {
         "recognition": {
@@ -1616,7 +1821,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/constellation_big.png"             
+                    "scratch_sprits/constellation_big.png",             
+                    "scratch_sprits/constellation.png"             
                     ],"threshold": 0.6
             }
         },
@@ -1972,7 +2178,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/justice.png"
+                    "scratch_sprits/justice.png",
+                    "scratch_sprits/justice_mid.png"
                 ],"threshold": 0.6
             }
         },
@@ -1992,7 +2199,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/decide.png"
+                    "scratch_sprits/decide.png",
+                    "scratch_sprits/decide_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -2012,7 +2220,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/libra.png"
+                    "scratch_sprits/libra.png",
+                    "scratch_sprits/libra_mid.png"
                 ],"threshold": 0.6
             }
         },
