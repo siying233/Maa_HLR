@@ -63,8 +63,65 @@
                 }
         },
         "action": {
+            "type": "DoNothing",
+            "param": {
+            }
+        },
+        "next": ["勾选_连续作战",
+                "click_画灵入战"
+            ],
+        "pre_delay": 1500,
+        "post_delay": 1500
+    },
+    "勾选_连续作战": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "continue_fight.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
             "type": "Click",
-            "param": {"target":[972, 539, 68, 18]
+            "param": {}
+        },
+        "next": [
+            "开始作战_连续战斗",
+            {"name":"click_暂不使用","jump_back":true}
+        ],
+        "focus": "勾选_连续作战",
+        "pre_delay": 800,
+        "post_delay": 800
+    },
+    "click_暂不使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"暂不使用",
+                "roi":[648, 423, 172, 65]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        }
+    },
+    "click_画灵入战": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"画灵入战",
+                "roi":[972, 539, 68, 18]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
             }
         },
         "next": ["开始作战"],
@@ -84,6 +141,37 @@
         },
         "next": ["选择助战画灵"],
         "focus": "开始作战"
+    },
+    "开始作战_连续战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"连续作战",
+                "roi":[593, 474, 405, 100]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["click_确定连续战斗"],
+        "focus": "开始作战_连续战斗"
+    },
+    "click_确定连续战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"确定",
+                "roi":[668, 474, 299, 91]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["选择助战画灵"],
     },
     "选择助战画灵": {
         "recognition": {
@@ -114,7 +202,7 @@
             "param": {
             }
         },
-        "next": ["选择助战画灵"],
+        "next": ["画灵选择"],
         "focus": "助战选择中"
     },
      "画灵选择": {
@@ -130,7 +218,40 @@
             "param": {
             }
         },
-        "next": [],
+        "next": ["编队完成_开始战斗"],
         "focus": "助战选择中"
+    },
+     "编队完成_开始战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":["开始战斗","连续战斗"],
+                "roi":[977, 609, 255, 82]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        // "next": ["通关判定"],
+        "focus": "编队完成_开始战斗"
+    },
+     "通关判定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":["通关"],
+                "roi":[543, 35, 720, 439]
+                }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": [],
+        "pre_delay": 10000,
+        "post_delay": 10000
     },
 }

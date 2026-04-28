@@ -123,8 +123,8 @@
             "param": {}
         },
         "next": [
+            "场景事件状态退出",
             {"name":"click_对话_左框框","jump_back": true},
-            "场景事件状态退出"
         ],
         "focus": "进入场景事件"
     },
@@ -1159,6 +1159,7 @@
             
                 "template": [
                     "scratch_sprits/libra.png",
+                    "scratch_sprits/libra_big.png",
                     "scratch_sprits/libra_mid.png" 
                 ],
                 "threshold": 0.6
@@ -2221,6 +2222,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/libra.png",
+                    "scratch_sprits/libra_big.png",
                     "scratch_sprits/libra_mid.png"
                 ],"threshold": 0.6
             }
@@ -2241,7 +2243,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/libra.png"
+                    "scratch_sprits/libra.png",
+                    "scratch_sprits/libra_big.png",
+                    "scratch_sprits/libra_mid.png"
                 ],"threshold": 0.6
             }
         },

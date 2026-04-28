@@ -119,6 +119,11 @@
             "default_check": false
         },
         {
+            "name": "每日惊喜盒子",
+            "entry": "每日采购_开始",
+            "default_check": false
+        },
+        {
             "name": "猫罐头领取",
             "entry": "猫罐头_开始",
             "default_check": false
@@ -127,12 +132,15 @@
         //     "name": "神陨纪元_城市调查",
         //     "entry": "神陨纪元start",
         //     "default_check": false
-        // }
+        // },
         // {
         //     "name": "清理体力",
         //     "entry": "清理体力开始",
-        //     "default_check": false
-        // }
+        //     "default_check": false,
+        //     "option": [
+        //         "刷材料"
+        //     ]
+        // },
         // ,{
         //     "name": "",
         //     "entry": "",
@@ -142,6 +150,8 @@
         // }
         
     ],
+        
+
     "option": {
         "日程二选择对象": {
             "type": "select",
@@ -232,6 +242,19 @@
                         }
                        
         ]
-    }
+    },
+    "刷材料": {
+            "type": "select",
+            "cases":[
+                {
+                            "name": "刷经验",
+                            "pipeline_override": {
+                                "已在练习主界面": {
+                                    "next": ["刷经验_星间剧场"]
+                                }
+                            }
+                        }
+            ]
+        }
     }
 }

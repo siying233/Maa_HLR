@@ -1,0 +1,102 @@
+{
+    "每日采购_开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "已在主界面_采购",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ],
+        "focus": "采购领取_开始"
+    },
+    "已在主界面_采购": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"采购",
+                "roi":[313, 544, 166, 79]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {
+            }
+        },
+        "next": ["采购_免费可领取"]
+    },
+    "采购_免费可领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"免费",
+                "roi":[313, 544, 166, 79]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["采购_常驻礼包"]
+    },
+    "采购_常驻礼包": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"常驻礼包",
+                "roi":[160, 307, 1031, 130]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["每日惊喜盒子"]
+    },
+    "每日惊喜盒子": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "daily_free_box.png"
+                ],
+                "roi": [162, 229, 1034, 472]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": ["每日盒子_领取"],
+        "focus": "每日惊喜盒子"
+    },
+    "每日盒子_领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected":"免费",
+                "roi":[549, 584, 180, 42]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": ["close恭喜获得"]
+    },
+}
