@@ -198,6 +198,27 @@
         "post_delay": 800,
         "focus": "速写_开始"
     },
+    "速写泡泡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "造型","张力","情感","色彩"
+                ],
+                "roi": [268, 224, 738, 254]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "灵感"
+        ],
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "速写泡泡"
+    },
     "速写_一键收集": {
         "recognition": {
             "type": "OCR",
@@ -2346,7 +2367,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/music_stand.png"
+                    "scratch_sprits/music_stand.png",
+                    "scratch_sprits/music_stand_big.png"
                 ],"threshold": 0.6
             }
         },
