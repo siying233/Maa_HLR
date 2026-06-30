@@ -10,6 +10,7 @@
         },
         "next": [
             "好友",
+            "好友2",
             "好友加载完成",
             {
                 "name": "关闭当前界面",
@@ -67,6 +68,43 @@
         "post_delay": 800,
         "focus": "好友"
     },
+    "好友2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friends_btn.png"
+                ],
+                "roi": [127, 0, 334, 136]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "好友加载完成",
+            {
+                "name": "好友加载中",
+                "jump_back": true
+            },
+            {
+                "name": "好友_重试2",
+                "jump_back": true
+            },
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "好友"
+    },
     "好友_重试": {
         "recognition": {
             "type": "OCR",
@@ -91,6 +129,26 @@
         "post_delay": 800,
         "focus": "好友_重试"
     },
+    "好友_重试2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friends_btn.png"
+                ],
+                "roi": [127, 0, 334, 136]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        
+        "pre_delay": 800,
+        "post_delay": 800,
+        "focus": "好友_重试"
+    },
+
     "好友加载中": {
         "recognition": {
             "type": "OCR",

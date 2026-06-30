@@ -15,6 +15,10 @@
                 "jump_back": true
             },
             {
+                "name": "校园2",
+                "jump_back": true
+            },
+            {
                 "name": "关闭当前界面",
                 "jump_back": true
             }

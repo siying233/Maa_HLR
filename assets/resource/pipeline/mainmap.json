@@ -141,7 +141,7 @@
             {
                 "name": "退回到主界面",
                 "jump_back": true
-            },
+            }
 
         ],
         "pre_delay": 400,
@@ -152,14 +152,10 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "daily.png"
+                    "daily.png",
+                    "daily2.png"
                 ],
-                "roi": [
-                    162,
-                    0,
-                    145,
-                    139
-                ]
+                "roi": [136, 15, 286, 206]
             }
         },
         "action": {

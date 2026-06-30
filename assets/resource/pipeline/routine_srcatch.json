@@ -16,6 +16,10 @@
                 "jump_back": true
             },
             {
+                "name": "校园2",
+                "jump_back": true
+            },
+            {
                 "name": "关闭当前界面",
                 "jump_back": true
             },
@@ -300,6 +304,7 @@
             "灵感_海边度假",
             "灵感_海边钓鱼",
             "灵感_儿童画",
+            "灵感_捉星星的猫",
             "灵感_星星",
             "灵感_星际童话",
             "灵感_天体观测",
@@ -531,6 +536,31 @@
         },
         "next": [
             "target1_火箭"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "灵感_捉星星的猫": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "捉星星的猫"
+                ],
+                "roi": [
+                    11,
+                    6,
+                    405,
+                    163
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "target1_猫爪"
         ],
         "pre_delay": 600,
         "post_delay": 600
@@ -1610,7 +1640,8 @@
         },
         "next": [
             "target2_吉他",
-            "target2_笔"
+            "target2_笔",
+            "target2_土星"
         ],
         "pre_delay": 0,
         "post_delay": 30,
@@ -1970,7 +2001,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/alien_big.png"
+                    "scratch_sprits/alien_big.png",
+                    "scratch_sprits/alien.png"
                 ],"threshold": 0.6
             }
         },
@@ -2307,7 +2339,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/clock_small.png"
+                    "scratch_sprits/clock_small.png",
+                    "scratch_sprits/clock_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -2327,7 +2360,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/circle_mid.png"
+                    "scratch_sprits/circle_mid.png",
+                    "scratch_sprits/circle_small.png"
                 ],"threshold": 0.6
             }
         },
@@ -2347,7 +2381,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/circle_mid.png"
+                    "scratch_sprits/circle_mid.png",
+                    "scratch_sprits/circle_small.png"
                 ],"threshold": 0.6
             }
         },

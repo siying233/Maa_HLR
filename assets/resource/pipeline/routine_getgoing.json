@@ -15,6 +15,10 @@
                 "jump_back": true
             },
             {
+                "name": "校园2",
+                "jump_back": true
+            },
+            {
                 "name": "关闭当前界面",
                 "jump_back": true
             }
@@ -27,12 +31,7 @@
                 "expected": [
                     "出行"
                 ],
-                "roi": [
-                    753,
-                    646,
-                    487,
-                    64
-                ]
+                "roi": [657, 375, 620, 322]
             }
         },
         "action": {
@@ -50,6 +49,10 @@
             "相约之地选择界面",
             {
                 "name": "校园",
+                "jump_back": true
+            },
+            {
+                "name": "校园2",
                 "jump_back": true
             }
         ],

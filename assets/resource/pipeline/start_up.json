@@ -98,7 +98,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "notes.png"
+                    "notes.png",
+                    "notes2.png"
                 ]
             }
         },
@@ -260,7 +261,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "notes.png"
+                    "notes.png",
+                    "notes2.png"
                 ],
                 "roi": [
                     445,

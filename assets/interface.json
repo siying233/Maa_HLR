@@ -20,6 +20,7 @@
         {
             "name": "安卓端",
             "type": "Adb",
+            "description": "- mac的蓝叠adb路径:`/Applications/BlueStacks.app/Contents/MacOS/hd-adb`\n adb地址:127.0.0.1:5555",
             "display_short_side": 720 // 默认缩放分辨率的短边长度
         },
         {
@@ -28,12 +29,12 @@
             "win32": {
                 "class_regex": ".*",
                 "window_regex": "Visual Studio"
-            },
+            }
             // 截图及控制方式，请根据项目实际情况修改
             // 文档: https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/2.4-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E8%AF%B4%E6%98%8E.md
-            "screencap": "PrintWindow", // 截图方式
-            "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
-            "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
+            // "screencap": "PrintWindow", // 截图方式
+            // "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
+            // "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
         }
     ],
     "resource": [
@@ -83,7 +84,7 @@
             "name": "🚶课后出行", // getgoing
             "entry": "课后出行启动",
             "label": "课后出行-日常",
-            "default_check": true,
+            "default_check": true
         },
         {
             "name": "📅日程",
@@ -104,7 +105,7 @@
         {
             "name": "🎨速写",
             "entry": "速写启动",
-            "label": "速写-日常",
+            "label": "速写-日常"
             // "default_check": true
         },
         {
@@ -133,14 +134,14 @@
         //     "entry": "神陨纪元start",
         //     "default_check": false
         // },
-        // {
-        //     "name": "清理体力",
-        //     "entry": "清理体力开始",
-        //     "default_check": false,
-        //     "option": [
-        //         "刷材料"
-        //     ]
-        // },
+        {
+            "name": "清理体力",
+            "entry": "清理体力开始",
+            "default_check": false,
+            "option": [
+                "刷材料"
+            ]
+        },
         // ,{
         //     "name": "",
         //     "entry": "",

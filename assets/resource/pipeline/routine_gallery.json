@@ -10,6 +10,7 @@
         },
         "next": [
             "画廊",
+            "画廊2",
             {
                 "name": "关闭当前界面",
                 "jump_back": true
@@ -45,6 +46,28 @@
         "pre_delay": 400,
         "post_delay": 400,
         "focus": "画廊"
+    },
+    "画廊2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "画廊"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "每日写生素材箱",
+            {
+                "name": "画廊向左滑动",
+                "jump_back": true
+            }
+        ],
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "画廊" 
     },
     "画廊向左滑动": {
         "recognition": {

@@ -26,8 +26,8 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected":"采购",
-                "roi":[313, 544, 166, 79]
+                "expected":"采购"
+                // "roi":[313, 544, 166, 79]
             }
         },
         "action": {
@@ -98,5 +98,5 @@
             }
         },
         "next": ["close恭喜获得"]
-    },
+    }
 }

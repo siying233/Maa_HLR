@@ -53,6 +53,25 @@
         "post_wait_freezes": 500,
         "focus": "校园"
     },
+    "校园2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "校园"
+                ],
+                "roi": [
+                   0,0,0,0
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "focus": "校园"
+    },
     "close活动限时卡池概率提升": {
         "recognition": {
             "type": "OCR",

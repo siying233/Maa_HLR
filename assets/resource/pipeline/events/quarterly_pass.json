@@ -11,6 +11,7 @@
         },
         "next": [
             "点击_活动",
+            "点击_活动2",
             "季旅",
             {
                 "name": "退回到主界面",
@@ -44,6 +45,24 @@
             "param": {
                 "template": ["event_btn.png"],
                 "roi":[221, 590, 1052, 129]
+            }
+
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "季旅"
+        ],
+        "focus": "点击_活动"
+    },
+    "点击_活动2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["活动"],
+                "roi":[0,0,0,0]
             }
 
         },
