@@ -62,7 +62,7 @@
     "task": [
         {
             "name": "🎮启动绘旅人",
-            "label": "启动绘旅人",
+            // "label": "启动绘旅人",
             "entry": "开始",
             "description": "请确保模拟器运行中。首次使用请在模拟器中下载好官服app,并且为登录状态。\n该任务包含启动游戏、自动签到、关闭开屏等功能，若新活动更新，可能无法完成部分任务，并需要长时间等待的问题。",
             "default_check": true
@@ -70,26 +70,26 @@
         {
             "name": "💐赠人玫瑰",
             "entry": "赠人玫瑰开始",
-            "label": "赠人玫瑰-日常",
+            // "label": "赠人玫瑰-日常",
             // "description": "赠送好友体力",
             "default_check": true
         },
         {
             "name": "🖼画展启动", //exhibition
-            "entry": "画展启动",
-            "label": "画展-日常",
+            "entry": "画展启动", 
+            // "label": "画展-日常",
             "default_check": true
         },
         {
             "name": "🚶课后出行", // getgoing
             "entry": "课后出行启动",
-            "label": "课后出行-日常",
+            // "label": "课后出行-日常",
             "default_check": true
         },
         {
             "name": "📅日程",
             "entry": "日程启动",
-            "label": "日程-日常",
+            // "label": "日程-日常",
             // "description": "安排当天日常，优先邀请男主，随机邀请其他角色",
             "default_check": true,
             "option": [
@@ -99,19 +99,19 @@
         {
             "name": "🤹‍♀️画廊材料十抽",
             "entry": "画廊材料十抽开始",
-            "label": "画廊材料-日常",
+            // "label": "画廊材料-日常",
             "default_check": true
         },
         {
             "name": "🎨速写",
             "entry": "速写启动",
-            "label": "速写-日常"
-            // "default_check": true
+            // "label": "速写-日常"
+            "default_check": true
         },
         {
             "name": "⭕日常领取",
             "entry": "日常领取",
-            "label": "奖励领取-日常收尾",
+            // "label": "奖励领取-日常收尾",
             "default_check": true
         },
         {

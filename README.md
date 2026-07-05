@@ -2,13 +2,7 @@
   <img alt="LOGO" src="maahlr_2026-02-25.png" width="256" height="256" />
 </p>
 
-
-
-
-
 # MaaHLR
-
-
 
 **MaaHLR**（海螺肉小助手）是一个基于 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 的《时空中的绘旅人》日常肝活小助手，通过**图像技术 + 模拟控制** ，解放双手！
 
@@ -71,22 +65,8 @@
   <img src="https://contrib.rocks/image?repo=siying233/Maa_HLR" />
 </a>
 
-<!-- 
 ### 开发交流群
 
 目前该项目还有很多不足，欢迎小画家交流反馈，我会尽力解答和支持。
 
 Maa HLR 项目交流QQ群：789122189
- -->
-
-
-
-
-
-
-
-
-
-
-
-

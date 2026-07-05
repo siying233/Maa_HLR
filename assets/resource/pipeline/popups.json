@@ -276,6 +276,23 @@
         "post_delay": 400,
         "focus": "error_邀约未完成"
     },
+    "close_取消": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "取消"
+                ],
+                "roi" : [0,0,0,0]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "close_取消"
+    },
     "close_系统设置": {
         "recognition": {
             "type": "OCR",

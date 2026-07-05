@@ -209,6 +209,10 @@
             {
                 "name": "close其他弹窗",
                 "jump_back": true
+            },
+            {
+                "name": "返回到上一级",
+                "jump_back": true
             }
         ],
         "pre_delay": 6000,
