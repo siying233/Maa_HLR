@@ -195,7 +195,7 @@ jobs:
         run: |
           PYTHON_CMD="${{ matrix.os == 'windows' && './install/python/python.exe' || './install/python/bin/python3' }}"
           PLATFORM_TAG="${{ matrix.os == 'windows' && 'win' || 'osx' }}-${{ steps.platform.outputs.tag }}"
-          export PYTHONPATH="."
+          cp -f configure.py ./tools/ci/
           $PYTHON_CMD ./tools/ci/install.py ${{ needs.meta.outputs.tag }} $PLATFORM_TAG
           if [ "${{ matrix.os }}" = "windows" ]; then
             cp -rpvn tools/registry/. install/
