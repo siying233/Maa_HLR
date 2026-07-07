@@ -1,0 +1,5 @@
+maafw==5.11.1
+loguru
+pillow
+pytz
+requests
