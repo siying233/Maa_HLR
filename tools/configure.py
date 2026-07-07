@@ -13,8 +13,9 @@ def configure_ocr_model():
 
     ocr_dir = assets_dir / "resource" / "model" / "ocr"
     if not ocr_dir.exists():   # copy default OCR model only if dir does not exist
-        shutil.copytree(
-            assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v5" / "zh_cn",
+        shutil.copytree( 
+            assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v6" / "small",
+            # assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v5" / "zh_cn",
             ocr_dir,
             dirs_exist_ok=True,
         )
@@ -23,6 +24,6 @@ def configure_ocr_model():
 
 
 if __name__ == "__main__":
-    configure_ocr_model() #暂时跳过
+    configure_ocr_model() 
 
     print("OCR model configured.")

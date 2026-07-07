@@ -75,7 +75,7 @@
             "default_check": true
         },
         {
-            "name": "🖼画展启动", //exhibition
+            "name": "🖼画展", //exhibition
             "entry": "画展启动", 
             // "label": "画展-日常",
             "default_check": true
