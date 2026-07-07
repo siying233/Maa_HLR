@@ -6,10 +6,8 @@ import json
 import os
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(script_dir)
-
 from configure import configure_ocr_model
-from generate_manifest_cache import generate_manifest_cache
+# from generate_manifest_cache import generate_manifest_cache
 
 working_dir = Path(__file__).parent.parent.parent
 install_path = working_dir / Path("install")
@@ -113,16 +111,16 @@ def install_agent():
         json.dump(interface, f, ensure_ascii=False, indent=4)
 
 
-def install_manifest_cache():
-    """生成初始 manifest 缓存，加速用户首次启动"""
-    data_dir = install_path / "resource" / "data"
-    success = generate_manifest_cache(data_dir)
-    if success:
-        print("Manifest cache generated successfully.")
-    else:
-        print(
-            "Warning: Manifest cache generation failed, users will do full check on first run."
-        )
+# def install_manifest_cache():
+#     """生成初始 manifest 缓存，加速用户首次启动"""
+#     data_dir = install_path / "resource" / "data"
+#     success = generate_manifest_cache(data_dir)
+#     if success:
+#         print("Manifest cache generated successfully.")
+#     else:
+#         print(
+#             "Warning: Manifest cache generation failed, users will do full check on first run."
+#         )
 
 
 if __name__ == "__main__":
