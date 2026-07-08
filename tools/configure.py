@@ -2,7 +2,6 @@ from pathlib import Path
 
 import shutil
 
-from pathlib import Path
 
 def get_project_root() -> Path:
     """动态向上查找包含 .git 或 README.md 的项目根目录"""

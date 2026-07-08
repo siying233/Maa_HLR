@@ -3,3 +3,4 @@ loguru
 pillow
 pytz
 requests
+json5

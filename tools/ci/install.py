@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 import sys
 import json
+import json5
 import os
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -65,7 +66,7 @@ def install_resource():
     )
 
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
-        interface = json.load(f)
+        interface = json5.load(f)
 
     interface["version"] = version
     interface["title"] = f"maahlr {version} | 绘旅人小助手"
@@ -76,10 +77,11 @@ def install_resource():
 
 def install_chores():
     for file in ["README.md", "LICENSE", "CONTACT", "requirements.txt"]:
-        shutil.copy2(
-            working_dir / file,
-            install_path,
-        )
+        src = working_dir / file
+        if not src.exists():
+            print(f"Warning: {file} not found, skipping copy.")
+            continue
+        shutil.copy2(src, install_path)
     # shutil.copytree(
     #     working_dir / "docs",
     #     install_path / "docs",
@@ -96,7 +98,7 @@ def install_agent():
     )
 
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
-        interface = json.load(f)
+        interface = json5.load(f)
 
     if sys.platform.startswith("win"):
         interface["agent"]["child_exec"] = r"./python/python.exe"
