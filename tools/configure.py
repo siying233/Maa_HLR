@@ -2,8 +2,22 @@ from pathlib import Path
 
 import shutil
 
-assets_dir = Path(__file__).parent.parent.resolve() / "assets"
+from pathlib import Path
 
+def get_project_root() -> Path:
+    """动态向上查找包含 .git 或 README.md 的项目根目录"""
+    current = Path(__file__).resolve()
+    # 循环向上查找，最多找 5 层防止死循环
+    for _ in range(5):
+        # 如果当前目录下有 .git 或 README.md，说明这就是根目录
+        if (current / ".git").exists() or (current / "README.md").exists():
+            return current
+        current = current.parent
+    # 如果没找到，兜底返回当前脚本的 parent
+    return Path(__file__).resolve().parent
+ROOT_DIR = get_project_root()
+assets_dir = ROOT_DIR / "assets"
+# assets_dir = Path(__file__).parent.parent.resolve() / "assets"
 
 def configure_ocr_model():
     # assets_ocr_dir = assets_dir / "MaaCommonAssets" / "OCR"
