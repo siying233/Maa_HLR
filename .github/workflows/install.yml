@@ -195,7 +195,7 @@ jobs:
         run: |
           PYTHON_CMD="${{ matrix.os == 'windows' && './install/python/python.exe' || './install/python/bin/python3' }}"
           PLATFORM_TAG="${{ matrix.os == 'windows' && 'win' || 'osx' }}-${{ steps.platform.outputs.tag }}"
-          cp -f ./tools/configure.py ./tools/ci/
+          cp -f tools/configure.py tools/ci/
           $PYTHON_CMD ./tools/ci/install.py ${{ needs.meta.outputs.tag }} $PLATFORM_TAG
           if [ "${{ matrix.os }}" = "windows" ]; then
             cp -rpvn tools/registry/. install/
@@ -291,7 +291,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install, changelog]
+    needs: [meta, install]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
