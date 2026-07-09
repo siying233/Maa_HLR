@@ -77,11 +77,10 @@ def install_resource():
 
 def install_chores():
     for file in ["README.md", "LICENSE", "CONTACT", "requirements.txt"]:
-        src = working_dir / file
-        if not src.exists():
-            print(f"Warning: {file} not found, skipping copy.")
-            continue
-        shutil.copy2(src, install_path)
+        shutil.copy2(
+            working_dir / file,
+            install_path,
+        )
     # shutil.copytree(
     #     working_dir / "docs",
     #     install_path / "docs",
@@ -130,6 +129,5 @@ if __name__ == "__main__":
     install_resource()
     install_chores()
     install_agent()
-    # install_manifest_cache()
 
     print(f"Install to {install_path} successfully.")

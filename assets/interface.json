@@ -5,7 +5,7 @@
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
     "name": "MaaHLR",
-    "description": "MaaHLR 海螺肉小助手，开发中~",
+    "description": "MaaHLR 海螺肉小助手",
     // "contact": "QQ群: 123456789",
     "license": "MIT",
     "welcome": "欢迎使用 MAA HLR! 首次使用须知：请确保模拟器运行中。请在模拟器中下载好官服app,并且为登录状态。\n该任务包含启动游戏、自动签到、关闭开屏等功能，若新活动更新，可能无法完成部分任务，并需要长时间等待的问题。",
@@ -44,13 +44,6 @@
                 "{PROJECT_DIR}/resource"
             ]
         }
-        // ,{
-        // "name": "B 服",
-        // "path": [
-        //     "{PROJECT_DIR}/resource",
-        //     "{PROJECT_DIR}/resource_bilibili"
-        // ]
-        // }
     ],
     "agent": {
         "child_exec": "python",
