@@ -6,7 +6,9 @@ import json
 import json5
 import os
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
 from configure import configure_ocr_model
 # from generate_manifest_cache import generate_manifest_cache
 
