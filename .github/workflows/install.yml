@@ -198,9 +198,7 @@ jobs:
           $PYTHON_CMD -m pip install json5
           cp -f tools/configure.py tools/ci/
           $PYTHON_CMD ./tools/ci/install.py ${{ needs.meta.outputs.tag }} $PLATFORM_TAG
-          if [ "${{ matrix.os }}" = "windows" ]; then
-            cp -rpvn tools/registry/. install/
-          fi
+          
 
       - name: Copy MFA files to main version
         shell: bash
