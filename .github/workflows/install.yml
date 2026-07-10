@@ -157,6 +157,32 @@ jobs:
           else
             echo "MFAAvalonia exe not found, skipping icon update."
           fi
+
+      - name: Modify Mac unix icons # 【全新细节】逆向篡改并注入自定义软件图标
+        if: matrix.os == 'macos' && matrix.arch == 'arm64'
+        shell: bash
+        run: |
+          # 检查你的二进制文件 Maa_HLR 是否存在
+          if [ -f "MFAAvalonia" ]; then
+            echo "MFAAvalonia found, injecting custom icon..."
+            
+            # 1. 使用 macOS 自带的 sips 将 .ico 转换为临时 .png，并直接生成隐式 icon 资源
+            sips -s format png logo.ico --out temp.png > /dev/null
+            sips -i temp.png > /dev/null
+
+            # 2. 提取 temp.png 中的图标资源分支（Resource Fork）并追加写入到 Maa_HLR 中
+            DeRez -only icns temp.png > temp.rsrc
+            Rez -append temp.rsrc -o MFAAvalonia
+
+            # 3. 开启 Maa_HLR 文件的“自定义图标”属性标记（Has Custom Icon）
+            SetFile -a C MFAAvalonia
+
+            # 4. 清理产生的临时文件
+            rm temp.png temp.rsrc
+            echo "MFAAvalonia icon modified successfully."
+          else
+            echo "MFAAvalonia binary not found, skipping icon update."
+          fi
     
       - name: Setup Embed Python on Windows
         if: matrix.os == 'windows'
