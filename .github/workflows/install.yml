@@ -159,7 +159,7 @@ jobs:
           fi
 
       - name: Modify Mac unix icons # 【全新细节】逆向篡改并注入自定义软件图标
-        if: matrix.os == 'macos' && matrix.arch == 'arm64'
+        if: matrix.os == 'macos' && matrix.arch == 'aarch64'
         shell: bash
         run: |
           # 检查你的二进制文件 Maa_HLR 是否存在
