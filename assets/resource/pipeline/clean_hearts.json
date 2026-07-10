@@ -91,7 +91,8 @@
         },
         "next": [
             "开始作战_连续战斗",
-            {"name":"click_暂不使用","jump_back":true}
+            {"name":"click_暂不使用","jump_back":true},
+            "click_确定连续战斗"
         ],
         "focus": "勾选_连续作战",
         "pre_delay": 800,
@@ -158,6 +159,22 @@
         "next": ["click_确定连续战斗"],
         "focus": "开始作战_连续战斗"
     },
+    // "开始作战_战斗": {
+    //     "recognition": {
+    //         "type": "OCR",
+    //         "param": {
+    //             "expected":"确定",
+    //             "roi":[593, 474, 405, 100]
+    //             }
+    //     },
+    //     "action": {
+    //         "type": "Click",
+    //         "param": {
+    //         }
+    //     },
+    //     "next": ["click_确定连续战斗"],
+    //     "focus": "开始作战_战斗"
+    // },
     "click_确定连续战斗": {
         "recognition": {
             "type": "OCR",
