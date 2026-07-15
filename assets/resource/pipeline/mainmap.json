@@ -173,12 +173,33 @@
                 "jump_back": true
             },
             {
-                "name": "日常计划"
+                "name": "日常计划",
+                "jump_back": true
+            },
+            {
+                "name": "retry_点击日常",
+                "jump_back": true
             }
         ],
         "pre_delay": 600,
         "post_delay": 600,
         "focus": "点击日常"
+    },
+    "retry_点击日常": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "daily.png",
+                    "daily2.png"
+                ],
+                "roi": [136, 15, 286, 206]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
     },
     "日常计划": {
         "recognition": {

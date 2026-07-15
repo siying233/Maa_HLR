@@ -55,7 +55,8 @@
             "文具兑换",
             "速写_选择一个地方",
             "速写_一键收集",
-            "速写工具_不足"
+            "速写工具_不足",
+            "速写_开始"
         ],
         "pre_delay": 800,
         "post_delay": 800,
@@ -412,7 +413,7 @@
             "退出当前页面"
         ],
         "pre_delay": 600,
-        "post_delay": 600,
+        "post_delay": 800,
         "focus": "确定速写赠送"
     },
     "灵感_演奏的猫": {
@@ -1674,7 +1675,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/gitar.png"
+                    "scratch_sprits/gitar.png",
+                    "scratch_sprits/gitar_big.png"
                 ],
                 "threshold": 0.6
             }
@@ -1981,6 +1983,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/rocket_middle.png",
+                    "scratch_sprits/rocket_pink.png",
                     "scratch_sprits/rocket_small.png"
                 ],"threshold": 0.6
             }
