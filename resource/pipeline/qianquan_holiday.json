@@ -1,0 +1,228 @@
+{
+    "缱绻假日_开始": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qianquan_holiday_banner.png",
+                "roi": [
+                    0,
+                    300,
+                    200,
+                    250
+                ],
+                "threshold": 0.7
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "缱绻假日_领清单"
+        ],
+        "on_error": [
+            "缱绻假日_上滑"
+        ],
+        "timeout": 5000,
+        "pre_delay": 500,
+        "post_delay": 800,
+        "focus": "缱绻假日_开始 找假日入口"
+    },
+    "缱绻假日_上滑": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    51,
+                    442,
+                    1,
+                    1
+                ],
+                "end": [
+                    50,
+                    182,
+                    1,
+                    1
+                ],
+                "duration": 800
+            }
+        },
+        "next": [
+            "缱绻假日_开始"
+        ],
+        "pre_delay": 300,
+        "post_delay": 800,
+        "focus": "缱绻假日_上滑 把假日带出来"
+    },
+    "缱绻假日_领清单": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一键领取"
+                ],
+                "roi": [
+                    1080,
+                    560,
+                    260,
+                    160
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1142,
+                    632
+                ]
+            }
+        },
+        "next": [
+            "缱绻假日_再领"
+        ],
+        "pre_delay": 500,
+        "post_delay": 600,
+        "focus": "缱绻假日_领清单 点一键领取(假日清单)"
+    },
+    "缱绻假日_再领": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一键领取"
+                ],
+                "roi": [
+                    1080,
+                    560,
+                    260,
+                    160
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1142,
+                    632
+                ]
+            }
+        },
+        "next": [
+            "缱绻假日_切计划"
+        ],
+        "pre_delay": 500,
+        "post_delay": 600,
+        "focus": "缱绻假日_再领 再点一次一键领取"
+    },
+    "缱绻假日_切计划": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "假日计划"
+                ],
+                "roi": [
+                    380,
+                    90,
+                    200,
+                    80
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    467,
+                    119
+                ]
+            }
+        },
+        "next": [
+            "缱绻假日_领计划"
+        ],
+        "pre_delay": 500,
+        "post_delay": 600,
+        "focus": "缱绻假日_切计划 切到假日计划"
+    },
+    "缱绻假日_领计划": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一键领取"
+                ],
+                "roi": [
+                    1060,
+                    510,
+                    250,
+                    150
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1128,
+                    582
+                ]
+            }
+        },
+        "next": [
+            "缱绻假日_领计划2"
+        ],
+        "on_error": [
+            "缱绻假日_领计划_兜底"
+        ],
+        "pre_delay": 500,
+        "post_delay": 600,
+        "focus": "缱绻假日_领计划 点一键领取(假日计划)"
+    },
+    "缱绻假日_领计划_兜底": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1128,
+                    582
+                ]
+            }
+        },
+        "next": [
+            "缱绻假日_领计划2"
+        ],
+        "pre_delay": 500,
+        "post_delay": 600,
+        "focus": "缱绻假日_领计划_兜底 OCR失败兜底固定点击"
+    },
+    "缱绻假日_领计划2": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    453,
+                    581
+                ]
+            }
+        },
+        "next": [
+            "退回到主界面"
+        ],
+        "pre_delay": 800,
+        "post_delay": 600,
+        "focus": "缱绻假日_领计划2 无条件点[453,581]关闭弹窗"
+    }
+}

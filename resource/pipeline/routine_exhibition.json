@@ -1,0 +1,578 @@
+{
+    "画展启动": {
+        "next": [
+            "画展",
+            "[JumpBack]校园",
+            "[JumpBack]校园2",
+            "[JumpBack]关闭当前界面",
+            "[JumpBack]返回到上一级"
+        ]
+    },
+    "画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    753,
+                    646,
+                    487,
+                    64
+                ],
+                "expected": [
+                    "画展"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "post_delay": 400,
+        "next": [
+            "画展奖励领取",
+            "画展倒计时",
+            "选择举办画展位置"
+        ]
+    },
+    "选择举办画展位置": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    568,
+                    196,
+                    46
+                ],
+                "expected": [
+                    "选择"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_wait_freezes": 300,
+        "post_delay": 400,
+        "next": [
+            "律政楼画展"
+        ],
+        "focus": "选择举办画展位置"
+    },
+    "画展奖励领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    650,
+                    520,
+                    220,
+                    120
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    753,
+                    575
+                ]
+            }
+        },
+        "post_wait_freezes": 300,
+        "post_delay": 400,
+        "focus": "画展奖励领取",
+        "next": [
+            "画展领取点击空白处继续",
+            "画展领取_选择奖励",
+            "选择举办画展位置",
+            "画展"
+        ]
+    },
+    "画展领取_选择奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    442,
+                    413,
+                    405,
+                    150
+                ],
+                "expected": [
+                    "接下来",
+                    "保持"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    508,
+                    481,
+                    15,
+                    15
+                ]
+            }
+        },
+        "post_delay": 300,
+        "focus": "画展领取_选择奖励",
+        "next": [
+            "画展领取_选择奖励对象"
+        ]
+    },
+    "画展领取_选择奖励对象": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    474,
+                    273,
+                    347,
+                    184
+                ],
+                "expected": [
+                    "星尘"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展领取_选择奖励对象",
+        "next": [
+            "画展领取_确认更换奖励"
+        ]
+    },
+    "画展领取_确认更换奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_receive.png"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展领取_确认更换奖励",
+        "next": [
+            "画展领取点击空白处继续",
+            "画展"
+        ]
+    },
+    "画展领取点击空白处继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    343,
+                    530,
+                    578,
+                    166
+                ],
+                "expected": [
+                    "点击空白处"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展领取点击空白处继续",
+        "next": [
+            "律政楼画展"
+        ]
+    },
+    "律政楼画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ],
+                "expected": [
+                    "律政楼","浪漫"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "focus": "律政楼画展",
+        "next": [
+            "画展申请",
+            "[JumpBack]retry_律政楼画展"
+        ]
+    },
+    "retry_律政楼画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ],
+                "expected": [
+                    "律政楼","浪漫"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "focus": "retry_律政楼画展"
+    },
+    "画展申请": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    860,
+                    440,
+                    260,
+                    200
+                ],
+                "expected": [
+                    "申请"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "focus": "画展申请",
+        "next": [
+            "next_画展二"
+        ]
+    },
+    "退出画展界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_close_small.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "focus": "退出画展界面",
+        "next": [
+            "退回到主界面"
+        ]
+    },
+    "画展倒计时": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    520,
+                    497,
+                    232,
+                    148
+                ],
+                "expected": [
+                    "取消宣传"
+                ]
+            }
+        },
+        "focus": "画展倒计时中",
+        "next": [
+            "退出画展界面"
+        ]
+    },
+    "next_画展二": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1216,
+                    375,
+                    9,
+                    11
+                ]
+            }
+        },
+        "focus": "next_画展2",
+        "next": [
+            "画展二奖励领取",
+            "画展倒计时",
+            "选择举办画展位置二"
+        ]
+    },
+    "画展二奖励领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    760,
+                    520,
+                    220,
+                    120
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    860,
+                    575
+                ]
+            }
+        },
+        "post_wait_freezes": 300,
+        "post_delay": 400,
+        "focus": "画展二奖励领取",
+        "next": [
+            "画展二领取_选择奖励",
+            "画展二领取点击空白处继续",
+            "选择举办画展位置二",
+            "画展"
+        ]
+    },
+    "画展二领取点击空白处继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    343,
+                    530,
+                    578,
+                    166
+                ],
+                "expected": [
+                    "点击空白处"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展二领取点击空白处继续",
+        "next": [
+            "港口画展"
+        ]
+    },
+    "声望解锁画展二": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同时举办"
+                ]
+            }
+        },
+        "focus": "声望等级解锁画展2",
+        "next": [
+            "退出画展界面"
+        ]
+    },
+    "画展二领取_选择奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    442,
+                    413,
+                    405,
+                    150
+                ],
+                "expected": [
+                    "接下来",
+                    "保持"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    508,
+                    481,
+                    15,
+                    15
+                ]
+            }
+        },
+        "post_delay": 300,
+        "focus": "画展二领取_选择奖励",
+        "next": [
+            "画展二_选择星尘"
+        ]
+    },
+    "画展二_选择星尘": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    474,
+                    273,
+                    347,
+                    184
+                ],
+                "expected": [
+                    "星尘"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展二领取_选择奖励对象",
+        "next": [
+            "画展二_确认奖励"
+        ]
+    },
+    "画展二_确认奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "btn_receive.png"
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 300,
+        "focus": "画展二_确认奖励",
+        "next": [
+            "港口画展",
+            "画展"
+        ]
+    },
+    "港口画展": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ],
+                "expected": [
+                    "港口"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    882,
+                    499
+                ]
+            }
+        },
+        "focus": "律政楼画展",
+        "next": [
+            "画展二申请",
+            "[JumpBack]retry_其他地图"
+        ]
+    },
+    "retry_其他地图": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    529,
+                    176,
+                    490,
+                    368
+                ],
+                "expected": [
+                    "天文","往事","浪漫","冒险"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "focus": "retry_画展"
+    },
+    "画展二申请": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    980,
+                    480,
+                    200,
+                    150
+                ],
+                "expected": [
+                    "申请"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1069,
+                    533
+                ]
+            }
+        },
+        "focus": "画展二申请",
+        "next": [
+            "退出画展界面"
+        ]
+    },
+    "选择举办画展位置二": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    568,
+                    196,
+                    46
+                ],
+                "expected": [
+                    "选择"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "post_wait_freezes": 300,
+        "post_delay": 400,
+        "next": [
+            "港口画展"
+        ],
+        "focus": "选择举办画展位置二"
+    }
+}
