@@ -29,7 +29,7 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected":"今日体力",
+                "expected":"体力",
                 "roi":[0,0,0,0]
             }
         },
@@ -68,7 +68,10 @@
         "action": {
             "type": "Click",
             "param": {}
-        }
+        },
+        "next": [
+            "来自猫的馈赠"
+        ]
     },
     "猫馈赠": {
         "recognition": {
@@ -99,7 +102,7 @@
             "param": {}
         },
         "next": [
-            "猫罐头免费补签",
+            "猫罐头免费补签"
         ]
     },
     "猫补签2": {
@@ -142,7 +145,12 @@
                 "expected": [
                     "领取"
                 ],
-                "roi": [771, 328, 257, 95]
+                "roi": [
+                    790,
+                    303,
+                    207,
+                    145
+                ]
             }
         },
         "action": {
@@ -159,7 +167,12 @@
                 "expected": [
                     "领取"
                 ],
-                "roi": [771, 328, 257, 95]
+                "roi": [
+                    790,
+                    303,
+                    207,
+                    145
+                ]
             }
         },
         "action": {
@@ -182,7 +195,69 @@
             "type": "Click",
             "param": {}
         },
-        "next": ["猫补签2", "来自猫的馈赠2","猫馈赠尚未开启"],
+        "next": ["猫补签2", "来自猫的馈赠2"],
         "focus": "另一罐头"
+    },
+    "猫罐头_今日体力主页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ["今日体力"],
+                "roi": [0, 0, 0, 0]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "猫罐头_领取"
+        ],
+        "on_error": [
+            "猫罐头_退出"
+        ],
+        "pre_delay": 600,
+        "post_delay": 800
+    },
+    "猫罐头_领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "cat_claim_btn.png"
+                ],
+                "roi": [
+                    820,
+                    350,
+                    160,
+                    60
+                ],
+                "threshold": 0.95
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "猫罐头_退出"
+        ],
+        "on_error": [
+            "猫罐头_退出"
+        ],
+        "timeout": 3000,
+        "pre_delay": 1000,
+        "post_delay": 1500
+    },
+    "猫罐头_退出": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [60, 60, 4, 4]
+            }
+        },
+        "pre_delay": 300,
+        "post_delay": 500
     }
 }
