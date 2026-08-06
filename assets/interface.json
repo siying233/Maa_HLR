@@ -1,28 +1,18 @@
 {
-    // 本文件主要定义了通用 UI 的行为和显示内容
-    // 可参考文档和示例添加更多您需要的功能
-    // 文档：https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.3-ProjectInterfaceV2%E5%8D%8F%E8%AE%AE.md
-    // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
     "name": "MaaHLR",
     "description": "MaaHLR 海螺肉小助手",
-    // "contact": "QQ群: 123456789",
     "license": "MIT",
     "welcome": "欢迎使用 MAA HLR! 首次使用须知：请确保模拟器运行中。请在模拟器中下载好官服app,并且为登录状态。\n该任务包含启动游戏、自动签到、关闭开屏等功能，若新活动更新，可能无法完成部分任务，并需要长时间等待的问题。",
-    // 填写项目地址和版本号可实现自动更新功能
     "icon": "logo.ico",
     "github": "https://github.com/siying233/Maa_HLR",
-    "version": "1.0.0",
-    // Mirror酱为第三方分发服务，新项目默认关闭
-    // 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
-    // "mirrorchyan_rid": "MaaXXX",
-    // "mirrorchyan_multiplatform": true,
+    "version": "1.0.1",
     "controller": [
         {
             "name": "安卓端",
             "type": "Adb",
             "description": "- mac的蓝叠adb路径:`/Applications/BlueStacks.app/Contents/MacOS/hd-adb`\n adb地址:127.0.0.1:5555",
-            "display_short_side": 720 // 默认缩放分辨率的短边长度
+            "display_short_side": 720
         },
         {
             "name": "桌面端",
@@ -31,11 +21,6 @@
                 "class_regex": ".*",
                 "window_regex": "Visual Studio"
             }
-            // 截图及控制方式，请根据项目实际情况修改
-            // 文档: https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/2.4-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E8%AF%B4%E6%98%8E.md
-            // "screencap": "PrintWindow", // 截图方式
-            // "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
-            // "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
         }
     ],
     "resource": [
@@ -43,20 +28,32 @@
             "name": "官服",
             "path": [
                 "{PROJECT_DIR}/resource"
+            ],
+            "packages": [
+                "com.netease.skzdhlr"
+            ]
+        },
+        {
+            "name": "官方渠道服",
+            "path": [
+                "{PROJECT_DIR}/resource",
+                "{PROJECT_DIR}/resource_channel"
+            ],
+            "packages": [
+                "com.netease.skzdhlr.external"
             ]
         }
     ],
     "agent": {
-        "child_exec": "python",
+        "child_exec": "./python/python.exe",
         "child_args": [
             "-u",
-            "./../agent/main.py"
+            "./agent/main.py"
         ]
     },
     "task": [
         {
             "name": "🎮启动绘旅人",
-            // "label": "启动绘旅人",
             "entry": "开始",
             "description": "请确保模拟器运行中。首次使用请在模拟器中下载好官服app,并且为登录状态。\n该任务包含启动游戏、自动签到、关闭开屏等功能，若新活动更新，可能无法完成部分任务，并需要长时间等待的问题。",
             "default_check": true
@@ -64,27 +61,24 @@
         {
             "name": "💐赠人玫瑰",
             "entry": "赠人玫瑰开始",
-            // "label": "赠人玫瑰-日常",
-            // "description": "赠送好友体力",
             "default_check": true
         },
         {
-            "name": "🖼画展", //exhibition
-            "entry": "画展启动", 
-            // "label": "画展-日常",
-            "default_check": true
+            "name": "🖼画展",
+            "entry": "画展启动",
+            "default_check": true,
+            "option": [
+                "画展场次"
+            ]
         },
         {
-            "name": "🚶课后出行", // getgoing
+            "name": "🚶课后出行",
             "entry": "课后出行启动",
-            // "label": "课后出行-日常",
             "default_check": true
         },
         {
             "name": "📅日程",
             "entry": "日程启动",
-            // "label": "日程-日常",
-            // "description": "安排当天日常，优先邀请男主，随机邀请其他角色",
             "default_check": true,
             "option": [
                 "日程二选择对象"
@@ -93,19 +87,16 @@
         {
             "name": "🤹‍♀️画廊材料十抽",
             "entry": "画廊材料十抽开始",
-            // "label": "画廊材料-日常",
             "default_check": true
         },
         {
             "name": "🎨速写",
             "entry": "速写启动",
-            // "label": "速写-日常"
             "default_check": true
         },
         {
             "name": "⭕日常领取",
             "entry": "日常领取",
-            // "label": "奖励领取-日常收尾",
             "default_check": true
         },
         {
@@ -121,13 +112,11 @@
         {
             "name": "猫罐头领取",
             "entry": "猫罐头_开始",
-            "default_check": false
+            "default_check": false,
+            "option": [
+                "季卡"
+            ]
         },
-        // {
-        //     "name": "神陨纪元_城市调查",
-        //     "entry": "神陨纪元start",
-        //     "default_check": false
-        // },
         {
             "name": "清理体力",
             "entry": "清理体力开始",
@@ -136,120 +125,199 @@
                 "刷材料"
             ]
         },
-        // ,{
-        //     "name": "",
-        //     "entry": "",
-        //     "label": "",
-        //     "description": "",
-        //     "default_check": false
-        // }
-        
+        {
+            "name": "📮领取邮箱",
+            "entry": "邮箱领取开始",
+            "default_check": false
+        },
+        {
+            "name": "🎭手偶剧场点赞",
+            "entry": "手偶点赞_开始",
+            "default_check": false
+        },
+        {
+            "name": "📜绘卷回忆",
+            "entry": "绘卷回忆_开始",
+            "default_check": false
+        },
+        {
+            "name": "🏖缱绻假日",
+            "entry": "缱绻假日_开始",
+            "default_check": false
+        }
     ],
-        
-
     "option": {
         "日程二选择对象": {
             "type": "select",
             "cases": [
-                        {
-                            "name": "日程二_随机选择"
-                            
-                        },
-                        {
-                            "name": "日程二选罗夏",
-                            "pipeline_override": {
-                                "日程二_随机选择": {
-                                    "recognition": {
-                                        "type": "OCR",
-                                        "param": {
-                                            "expected": [
-                                                "罗夏"
-                                            ],
-                                            "roi": [193,72,149,501]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "日程二选叶瑄",
-                            "pipeline_override": {
-                                "日程二_随机选择": {
-                                    "recognition": {
-                                        "type": "OCR",
-                                        "param": {
-                                            "expected": [
-                                                "叶瑄"
-                                            ],
-                                            "roi": [193,72,149,501]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "日程二选艾因",
-                            "pipeline_override": {
-                                "日程二_随机选择": {
-                                    "recognition": {
-                                        "type": "OCR",
-                                        "param": {
-                                            "expected": [
-                                                "艾因"
-                                            ],
-                                            "roi": [193,72,149,501]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "日程二选路辰",
-                            "pipeline_override": {
-                                "日程二_随机选择": {
-                                    "recognition": {
-                                        "type": "OCR",
-                                        "param": {
-                                            "expected": [
-                                                "路辰"
-                                            ],
-                                            "roi": [193,72,149,501]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "日程二选司岚",
-                            "pipeline_override": {
-                                "日程二_随机选择": {
-                                    "recognition": {
-                                        "type": "OCR",
-                                        "param": {
-                                            "expected": [
-                                                "司岚"
-                                            ],
-                                            "roi": [193,72,149,501]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                       
-        ]
-    },
-    "刷材料": {
-            "type": "select",
-            "cases":[
                 {
-                            "name": "刷经验",
-                            "pipeline_override": {
-                                "已在练习主界面": {
-                                    "next": ["刷经验_星间剧场"]
+                    "name": "日程二_随机选择"
+                },
+                {
+                    "name": "日程二选罗夏",
+                    "pipeline_override": {
+                        "日程二_随机选择": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "罗夏"
+                                    ],
+                                    "roi": [
+                                        193,
+                                        72,
+                                        149,
+                                        501
+                                    ]
                                 }
                             }
                         }
+                    }
+                },
+                {
+                    "name": "日程二选叶瑄",
+                    "pipeline_override": {
+                        "日程二_随机选择": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "叶瑄"
+                                    ],
+                                    "roi": [
+                                        193,
+                                        72,
+                                        149,
+                                        501
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "日程二选艾因",
+                    "pipeline_override": {
+                        "日程二_随机选择": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "艾因"
+                                    ],
+                                    "roi": [
+                                        193,
+                                        72,
+                                        149,
+                                        501
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "日程二选路辰",
+                    "pipeline_override": {
+                        "日程二_随机选择": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "路辰"
+                                    ],
+                                    "roi": [
+                                        193,
+                                        72,
+                                        149,
+                                        501
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "日程二选司岚",
+                    "pipeline_override": {
+                        "日程二_随机选择": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "司岚"
+                                    ],
+                                    "roi": [
+                                        193,
+                                        72,
+                                        149,
+                                        501
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "刷材料": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "刷经验",
+                    "pipeline_override": {
+                        "已在练习主界面": {
+                            "next": [
+                                "刷经验_星间剧场"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "季卡": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "有季卡"
+                },
+                {
+                    "name": "没季卡",
+                    "pipeline_override": {
+                        "猫罐头_开始": {
+                            "recognition": {
+                                "type": "DirectHit"
+                            },
+                            "action": {
+                                "type": "DoNothing"
+                            },
+                            "next": [
+                                "猫罐头_今日体力主页面"
+                            ],
+                            "focus": "猫罐头_开始"
+                        }
+                    }
+                }
+            ]
+        },
+        "画展场次": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "两个画展"
+                },
+                {
+                    "name": "一个画展",
+                    "pipeline_override": {
+                        "画展申请": {
+                            "next": [
+                                "退出画展界面"
+                            ]
+                        }
+                    }
+                }
             ]
         }
-    }
+    },
+    "title": "maahlr v0.1.0 | 绘旅人小助手"
 }
