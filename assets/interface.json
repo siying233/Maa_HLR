@@ -11,8 +11,8 @@
         {
             "name": "安卓端",
             "type": "Adb",
-            "description": "- mac的蓝叠adb路径:`/Applications/BlueStacks.app/Contents/MacOS/hd-adb`\n adb地址:127.0.0.1:5555",
-            "display_short_side": 720
+            // "description": "- mac的蓝叠adb路径:`/Applications/BlueStacks.app/Contents/MacOS/hd-adb`\n adb地址:127.0.0.1:5555",
+            "display_short_side": 720 // 默认缩放分辨率的短边长度
         },
         {
             "name": "桌面端",
