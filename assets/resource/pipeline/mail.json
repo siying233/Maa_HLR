@@ -1,0 +1,111 @@
+{
+    "邮箱领取开始": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "邮箱_已在主界面",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ],
+        "focus": "邮箱领取_开始"
+    },
+    "邮箱_已在主界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "社交",
+                    "图鉴",
+                    "故事",
+                    "练习"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "点击邮箱入口"
+        ]
+    },
+    "点击邮箱入口": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "mail_entry.png"
+                ],
+                "roi": [140, 10, 160, 80],
+                "threshold": 0.75
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "校验邮箱界面"
+        ],
+        "on_error": [
+            "退回到主界面"
+        ],
+        "pre_delay": 600,
+        "post_delay": 800,
+        "focus": "点击邮箱入口"
+    },
+    "校验邮箱界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "邮件"
+                ],
+                "roi": [80, 20, 160, 80]
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "点击全部领取"
+        ],
+        "on_error": [
+            "退回到主界面"
+        ],
+        "pre_delay": 400,
+        "post_delay": 400
+    },
+    "点击全部领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取",
+                    "一键领取"
+                ],
+                "roi": [1020, 500, 260, 220]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "close恭喜获得"
+        ],
+        "on_error": [
+            "退回到主界面"
+        ],
+        "pre_delay": 600,
+        "post_delay": 800,
+        "focus": "点击全部领取"
+    }
+}

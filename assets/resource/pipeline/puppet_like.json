@@ -1,0 +1,208 @@
+{
+    "手偶点赞_开始": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "手偶_已在主界面",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
+        ]
+    },
+    "手偶_已在主界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "puppet_social.png",
+                "roi": [0, 560, 1280, 160],
+                "threshold": 0.6,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "手偶_点击社交"
+        ],
+        "on_error": [
+            "退回到主界面"
+        ]
+    },
+    "手偶_点击社交": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "puppet_social.png",
+                "roi": [0, 560, 1280, 160],
+                "threshold": 0.7,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "手偶_点击作品"
+        ],
+        "pre_delay": 600,
+        "post_delay": 800
+    },
+    "手偶_点击作品": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [814, 533, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_点击发现"
+        ],
+        "pre_delay": 600,
+        "post_delay": 800
+    },
+    "手偶_点击发现": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [460, 70, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_点击第一个作品"
+        ],
+        "pre_delay": 400,
+        "post_delay": 800
+    },
+    "手偶_点击第一个作品": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [342, 293, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_唤起侧边栏"
+        ],
+        "pre_delay": 800,
+        "post_delay": 800
+    },
+    "手偶_唤起侧边栏": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [640, 360, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_点击爱心"
+        ],
+        "pre_delay": 600,
+        "post_delay": 600
+    },
+    "手偶_点击爱心": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [1223, 406, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_退出1"
+        ],
+        "pre_delay": 400,
+        "post_delay": 600
+    },
+    "手偶_退出1": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [60, 60, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_退出2"
+        ],
+        "pre_delay": 300,
+        "post_delay": 500
+    },
+    "手偶_退出2": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [60, 60, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_退出3"
+        ],
+        "pre_delay": 300,
+        "post_delay": 500
+    },
+    "手偶_退出3": {
+        "recognition": {
+            "type": "DirectHit"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [60, 60, 4, 4]
+            }
+        },
+        "next": [
+            "手偶_是否在主界面"
+        ],
+        "pre_delay": 300,
+        "post_delay": 500
+    },
+    "手偶_是否在主界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "puppet_social.png",
+                "roi": [0, 560, 1280, 160],
+                "threshold": 0.6,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "on_error": [
+            "手偶_退出3"
+        ],
+        "timeout": 3000,
+        "pre_delay": 300,
+        "post_delay": 300
+    }
+}
