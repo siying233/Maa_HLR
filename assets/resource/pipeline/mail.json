@@ -43,9 +43,9 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "mail_entry.png"
+                    "mail_entry.png","mail_entry2.png"
                 ],
-                "roi": [140, 10, 160, 80],
+                "roi": [94, 3, 249, 148],
                 "threshold": 0.75
             }
         },

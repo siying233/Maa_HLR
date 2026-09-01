@@ -43,6 +43,10 @@
         "next": [
             "每日写生素材箱",
             {
+                "name": "画廊向左滑动2",
+                "jump_back": true
+            },
+            {
                 "name": "画廊向左滑动",
                 "jump_back": true
             }
@@ -64,6 +68,10 @@
         },
         "next": [
             "每日写生素材箱",
+            {
+                "name": "画廊向左滑动2",
+                "jump_back": true
+            },
             {
                 "name": "画廊向左滑动",
                 "jump_back": true
@@ -89,6 +97,23 @@
         "action": {
             "type": "Click",
             "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 700,
+        "focus": "画廊向左滑动"
+    },
+    "画廊向左滑动2": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [38, 349, 38, 28]
+            }
         },
         "pre_delay": 400,
         "post_delay": 700,

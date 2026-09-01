@@ -45,10 +45,10 @@
         }
     ],
     "agent": {
-        "child_exec": "./python/python.exe",
+        "child_exec": "python",
         "child_args": [
             "-u",
-            "./agent/main.py"
+            "./../agent/main.py"
         ]
     },
     "task": [
@@ -92,7 +92,8 @@
         {
             "name": "🎨速写",
             "entry": "速写启动",
-            "default_check": true
+            "default_check": true,
+            "option": ["速写次数"]
         },
         {
             "name": "⭕日常领取",
@@ -260,6 +261,75 @@
                 }
             ]
         },
+        "速写次数": {
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "速写启动":{
+                            "max_hit": 1
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "速写启动":{
+                            "max_hit": 2
+                        },
+                        "确定速写赠送":{
+                            "next": [
+                                "速写启动"
+                            ],
+                            "on_error": ["退出当前页面"]
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "速写启动":{
+                            "max_hit": 3
+                        },
+                        "确定速写赠送":{
+                            "next": [
+                                "速写启动"
+                            ],
+                            "on_error": ["退出当前页面"]
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "速写启动":{
+                            "max_hit": 4
+                        },
+                        "确定速写赠送":{
+                            "next": [
+                                "速写启动"
+                            ],
+                            "on_error": ["退出当前页面"]
+                        }
+                    }
+                },
+                {
+                    "name": "x5",
+                    "pipeline_override": {
+                        "速写启动":{
+                            "max_hit": 5
+                        },
+                        "确定速写赠送":{
+                            "next": [
+                                "速写启动"
+                            ],
+                            "on_error": ["退出当前页面"]
+                        }
+                    }
+                }
+                
+            ]
+        },
         "刷材料": {
             "type": "select",
             "cases": [
@@ -319,5 +389,6 @@
             ]
         }
     },
-    "title": "maahlr v0.1.0 | 绘旅人小助手"
+    "title": "maahlr v0.1.0 | 绘旅人小助手",
+
 }

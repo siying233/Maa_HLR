@@ -276,6 +276,26 @@
         "post_delay": 400,
         "focus": "error_邀约未完成"
     },
+    "close_猫罐界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "喵"
+                ],
+                "roi" : [672, 130, 456, 305]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target":[598, 359, 1, 1]
+            }
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "close_猫罐界面"
+    },
     "close_取消": {
         "recognition": {
             "type": "OCR",

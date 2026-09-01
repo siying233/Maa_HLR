@@ -1,6 +1,24 @@
 {
     "缱绻假日_开始": {
         "recognition": {
+            "type": "DirectHit",
+            "param": {
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "缱绻假日_1",
+            "缱绻假日_2"
+        ],
+        "timeout": 5000,
+        "pre_delay": 500,
+        "post_delay": 800,
+        "focus": "缱绻假日_开始 找假日入口"
+    },
+    "缱绻假日_1": {
+        "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "qianquan_holiday_banner.png",
@@ -56,6 +74,28 @@
         "post_delay": 800,
         "focus": "缱绻假日_上滑 把假日带出来"
     },
+    "缱绻假日_2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "假日"
+                ],
+                "roi":[263,604,535,114]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+            }
+        },
+        "next": [
+            "缱绻假日_领清单"
+        ],
+        "pre_delay": 300,
+        "post_delay": 800,
+        "focus": "缱绻假日_2"
+    },
     "缱绻假日_领清单": {
         "recognition": {
             "type": "OCR",
@@ -63,12 +103,7 @@
                 "expected": [
                     "一键领取"
                 ],
-                "roi": [
-                    1080,
-                    560,
-                    260,
-                    160
-                ]
+                "roi": [1009, 563, 265, 149]
             }
         },
         "action": {

@@ -1877,6 +1877,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/constellation_big.png",             
+                    "scratch_sprits/constellation_mid.png",             
                     "scratch_sprits/constellation.png"             
                     ],"threshold": 0.6
             }
@@ -2343,6 +2344,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/clock_small.png",
+                    "scratch_sprits/clock_pink.png",
                     "scratch_sprits/clock_big.png"
                 ],"threshold": 0.6
             }
@@ -2364,10 +2366,11 @@
             "param": {
                 "template": [
                     "scratch_sprits/circle_mid.png",
+                    "scratch_sprits/circle_blue.png",
                     "scratch_sprits/circle_small.png"
                 ],"threshold": 0.6
             }
-        },
+        },  
         "action": {
             "type": "TouchMove",
             "param": {}
@@ -2385,6 +2388,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/circle_mid.png",
+                    "scratch_sprits/circle_blue.png",
                     "scratch_sprits/circle_small.png"
                 ],"threshold": 0.6
             }

@@ -8,6 +8,7 @@
         },
         "next": [
             "手偶_直接进入社交",
+            "手偶_直接进入社交2",
             "手偶_已在主界面",
             {
                 "name": "关闭当前界面",
@@ -15,6 +16,11 @@
             },
             {
                 "name": "退出当前页面",
+                "jump_back": true
+            }
+            ,
+            {
+                "name": "close_猫罐界面",
                 "jump_back": true
             }
         ]
@@ -45,7 +51,25 @@
             "param": {
                 "expected": [
                     "社交"
-                ]
+                ],
+                "roi":[1047, 618, 142, 89]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "手偶_点击作品"
+        ]
+    },
+    "手偶_直接进入社交2":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "社交"
+                ],
+                "roi":[696, 453, 161, 96]
             }
         },
         "action": {
@@ -76,12 +100,18 @@
     },
     "手偶_点击作品": {
         "recognition": {
-            "type": "DirectHit"
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "作品"
+                ],
+                "roi": [748, 549, 146, 63]
+            }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target": [814, 533, 4, 4]
+                
             }
         },
         "next": [
@@ -92,12 +122,17 @@
     },
     "手偶_点击发现": {
         "recognition": {
-            "type": "DirectHit"
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "发现"
+                ],
+                "roi": [373, 29, 195, 83]
+            }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target": [460, 70, 4, 4]
             }
         },
         "next": [
@@ -136,7 +171,7 @@
             "手偶_点击爱心"
         ],
         "pre_delay": 600,
-        "post_delay": 600
+        "post_delay": 800
     },
     "手偶_点击爱心": {
         "recognition": {
@@ -204,13 +239,9 @@
     },
     "手偶_是否在主界面": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
-                "template": "puppet_social.png",
-                "roi": [0, 560, 1280, 160],
-                "threshold": 0.6,
-                "green_mask": true
-            }
+                "expected": "社交"            }
         },
         "action": {
             "type": "DoNothing"
