@@ -94,15 +94,17 @@
         ]
     },
     "已进入游戏check": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "notes.png",
-                    "notes2.png"
-                ]
+        "recognition": "And",
+        "all_of":[
+            {
+                "recognition": "OCR",
+                "expected": ["社交","图鉴"]
+            },
+            {
+                "recognition": "OCR",
+                "expected":["故事","练习"]
             }
-        },
+            ],
         "action": {
             "type": "DoNothing",
             "param": {}
@@ -139,7 +141,7 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "点击屏幕开始"
+                    "点击屏幕开始","始"
                 ],
                 "roi": [
                     542,

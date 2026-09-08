@@ -6,28 +6,31 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "DoNothing"
         },
         "next": [
-            "缱绻假日_1",
-            "缱绻假日_2"
+            "缱绻假日_左",
+            "缱绻假日_下",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            }
         ],
         "timeout": 5000,
         "pre_delay": 500,
         "post_delay": 800,
         "focus": "缱绻假日_开始 找假日入口"
     },
-    "缱绻假日_1": {
+    "缱绻假日_左": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "qianquan_holiday_banner.png",
-                "roi": [
-                    0,
-                    300,
-                    200,
-                    250
-                ],
+                "roi": [0, 130, 178, 337],
                 "threshold": 0.7
             }
         },
@@ -74,7 +77,7 @@
         "post_delay": 800,
         "focus": "缱绻假日_上滑 把假日带出来"
     },
-    "缱绻假日_2": {
+    "缱绻假日_下": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -94,7 +97,7 @@
         ],
         "pre_delay": 300,
         "post_delay": 800,
-        "focus": "缱绻假日_2"
+        "focus": "缱绻假日_下"
     },
     "缱绻假日_领清单": {
         "recognition": {

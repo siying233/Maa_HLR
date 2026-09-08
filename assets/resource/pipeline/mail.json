@@ -20,17 +20,17 @@
         "focus": "邮箱领取_开始"
     },
     "邮箱_已在主界面": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "社交",
-                    "图鉴",
-                    "故事",
-                    "练习"
-                ]
+        "recognition": "And",
+        "all_of":[
+            {
+                "recognition": "OCR",
+                "expected": ["社交","图鉴"]
+            },
+            {
+                "recognition": "OCR",
+                "expected":["故事","练习"]
             }
-        },
+            ],
         "action": {
             "type": "DoNothing"
         },
