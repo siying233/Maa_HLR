@@ -2113,7 +2113,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/power.png"
+                    "scratch_sprits/power.png",
+                    "scratch_sprits/power_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -2133,7 +2134,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/power.png"
+                    "scratch_sprits/power.png",
+                    "scratch_sprits/power_big.png"
                 ],"threshold": 0.6
             }
         },
@@ -2517,7 +2519,8 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "scratch_sprits/power.png"
+                    "scratch_sprits/power.png",
+                    "scratch_sprits/power_big.png"
                 ],"threshold": 0.6
             }
         },

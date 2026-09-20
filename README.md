@@ -27,7 +27,7 @@
 
 ## 使用指南
 
-[用户文档](https://www.yuque.com/shensiying-pm6ht/rrexbq/vnrdhrh1t7c3d0xl?singleDoc#) (链接有效期至2026.9.16，后续自动延期）
+**👉点击前往-->[用户文档](https://my.feishu.cn/wiki/QYPxwUauziCSA1kBjORcgDyNnNc?from=from_copylink)**
 
 **Windows 10/11**
 
