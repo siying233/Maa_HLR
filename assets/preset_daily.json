@@ -1,0 +1,68 @@
+{
+    "preset":[
+        {
+            "name": "日常",
+            "task":[
+                {
+                    "name": "🎮启动绘旅人",
+                    "enabled": true
+                },
+                {
+                    "name": "快速模式",
+                    "enabled": true
+                },
+                {
+                    "name": "🖼画展",
+                    "enabled": true
+                },
+                {
+                    "name": "🚶课后出行",
+                    "enabled": true
+                },
+                {
+                    "name": "📅日程",
+                    "enabled": true
+                    
+                },
+                {
+                    "name": "🎨速写",
+                    "enabled": true,
+                    "option": ["速写次数"]
+                },
+                {
+                    "name": "🎭手偶剧场点赞",
+                    "enabled": true
+                },
+                {
+                    "name": "⭕日常领取",
+                    "enabled": true
+                },
+                {
+                    "name": "猫罐头领取",
+                    "enabled": true,
+                    "option": [
+                        "季卡"
+                    ]
+                },
+                {
+                    "name": "📜绘卷回忆",
+                    "enabled": true
+                },
+                {
+                    "name": "🏖缱绻假日",
+                    "enabled": true
+                },
+                {
+                    "name": "清理体力",
+                    "enabled": true,
+                    "option": [
+                        "刷材料"
+                    ]
+                }
+                
+            ]
+        }
+        
+    ]
+    
+}

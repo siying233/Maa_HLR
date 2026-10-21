@@ -1,0 +1,269 @@
+{
+    "切换到快速模式": {
+        "focus": "快速模式_开始",
+        "next": [
+            "点击日常_fastmode",
+            {
+                "name": "关闭当前界面",
+                "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
+            },
+            {
+                "name": "close_我知道了",
+                "jump_back": true
+            }
+        ]
+    },
+    "点击日常_fastmode": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    136,
+                    15,
+                    286,
+                    206
+                ],
+                "template": [
+                    "daily.png",
+                    "daily2.png"
+                ]
+            }
+        },
+        "pre_delay": 600,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 600,
+        "focus": "点击日常",
+        "next": [
+            "快速模式",
+            {
+                "name": "close恭喜获得",
+                "jump_back": true
+            },
+            {
+                "name": "月签到计划",
+                "jump_back": true
+            },
+            {
+                "name": "日常计划",
+                "jump_back": true
+            },
+            {
+                "name": "点击日常_retry",
+                "jump_back": true
+            }
+        ]
+    },
+    "快速模式": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    67,
+                    0,
+                    398,
+                    129
+                ],
+                "expected": [
+                    "快速模式"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "focus": "快速模式",
+        "next": [
+            "快速模式_一键领取",
+            "快速模式_一键领取2",
+            {
+                "name": "快速模式_retry",
+                "jump_back": true
+            }
+        ]
+    },
+    "快速模式_retry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    67,
+                    0,
+                    398,
+                    129
+                ],
+                "expected": [
+                    "快速模式"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "focus": "快速模式_重试"
+    
+    },
+    "快速模式_一键领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1120,
+                    522,
+                    160,
+                    181
+                ],
+                "expected": [
+                    "键领取"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "focus": "一键领取",
+        "next": [
+            {
+                "name": "close恭喜获得",
+                "jump_back": true
+            },
+            "叉掉_快速模式"
+        ]
+    },
+    "快速模式_一键领取2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1120,
+                    522,
+                    160,
+                    181
+                ],
+                "template": [
+                    "claim_reward_2.png"
+                ]
+            }
+        },
+        "pre_delay": 400,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 600,
+        "focus": "一键领取",
+        "next": [
+            {
+                "name": "close恭喜获得",
+                "jump_back": true
+            },
+            "叉掉_快速模式"
+        ]
+    },
+    "点击日常_retry": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    136,
+                    15,
+                    286,
+                    206
+                ],
+                "template": [
+                    "daily.png",
+                    "daily2.png"
+                ]
+            }
+        },
+        "pre_delay": 600,
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 600,
+        "focus": "点击日常"
+    },
+    "叉掉_快速模式": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [826, 47, 162, 139],
+                "template": [
+                    "close_fast_mode.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    888,
+                    100,
+                    14,
+                    20
+                ]
+            }
+        },
+        "focus": "退出 快速模式",
+        "next": [
+            "确认_退出快速模式",
+            {
+                "name": "叉掉_快速模式_retry",
+                "jump_back": true
+            }
+        ]
+    },
+    "叉掉_快速模式_retry": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [826, 47, 162, 139],
+                "template": [
+                    "close_fast_mode.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    888,
+                    100,
+                    14,
+                    20
+                ]
+            }
+        },
+        "focus": "退出 快速模式",
+        "next": []
+    },
+    "确认_退出快速模式": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    705,
+                    427,
+                    245,
+                    85
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    }
+}

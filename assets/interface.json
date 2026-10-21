@@ -59,6 +59,11 @@
             "default_check": true
         },
         {
+            "name": "快速模式",
+            "entry": "切换到快速模式",
+            "default_check": true
+        },
+        {
             "name": "💐赠人玫瑰",
             "entry": "赠人玫瑰开始",
             "default_check": true
@@ -147,6 +152,7 @@
             "default_check": false
         }
     ],
+    "import": ["preset_daily.json"], 
     "option": {
         "日程二选择对象": {
             "type": "select",

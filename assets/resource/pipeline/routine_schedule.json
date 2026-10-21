@@ -21,7 +21,12 @@
             {
                 "name": "关闭当前界面",
                 "jump_back": true
+            },
+            {
+                "name": "退出当前页面",
+                "jump_back": true
             }
+            
         ]
     },
     "日程": {

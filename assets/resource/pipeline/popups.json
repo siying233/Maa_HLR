@@ -255,6 +255,24 @@
         "post_delay": 400,
         "focus": "点击屏幕退出"
     },
+    "close_我知道了": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "我知道了"
+                ],
+                "roi": [490, 535, 313, 113]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "post_delay": 400,
+        "focus": "close_我知道了"
+    },
     "error_请先完成邀约哦": {
         "recognition": {
             "type": "TemplateMatch",
