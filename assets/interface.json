@@ -63,11 +63,11 @@
             "entry": "切换到快速模式",
             "default_check": true
         },
-        {
-            "name": "💐赠人玫瑰",
-            "entry": "赠人玫瑰开始",
-            "default_check": true
-        },
+        // {
+        //     "name": "💐赠人玫瑰",
+        //     "entry": "赠人玫瑰开始",
+        //     "default_check": true
+        // },
         {
             "name": "🖼画展",
             "entry": "画展启动",
@@ -89,11 +89,11 @@
                 "日程二选择对象"
             ]
         },
-        {
-            "name": "🤹‍♀️画廊材料十抽",
-            "entry": "画廊材料十抽开始",
-            "default_check": true
-        },
+        // {
+        //     "name": "🤹‍♀️画廊材料十抽",
+        //     "entry": "画廊材料十抽开始",
+        //     "default_check": true
+        // },
         {
             "name": "🎨速写",
             "entry": "速写启动",
@@ -105,16 +105,16 @@
             "entry": "日常领取",
             "default_check": true
         },
-        {
-            "name": "季卡领取",
-            "entry": "季卡_开始",
-            "default_check": false
-        },
-        {
-            "name": "每日惊喜盒子",
-            "entry": "每日采购_开始",
-            "default_check": false
-        },
+        // {
+        //     "name": "季卡领取",
+        //     "entry": "季卡_开始",
+        //     "default_check": false
+        // },
+        // {
+        //     "name": "每日惊喜盒子",
+        //     "entry": "每日采购_开始",
+        //     "default_check": false
+        // },
         {
             "name": "猫罐头领取",
             "entry": "猫罐头_开始",

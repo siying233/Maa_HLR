@@ -1400,6 +1400,8 @@
             
                 "template": [
                     "scratch_sprits/research.png",
+                    "scratch_sprits/research_pink.png",
+                    "scratch_sprits/research_mid.png",
                     "scratch_sprits/research_pink_big.png"
                 ],
                 "threshold": 0.6
@@ -1423,6 +1425,8 @@
             
                 "template": [
                     "scratch_sprits/research.png",
+                    "scratch_sprits/research_pink.png",
+                    "scratch_sprits/research_mid.png",
                     "scratch_sprits/research_pink_big.png"
                 ],
                 "threshold": 0.6
@@ -1962,6 +1966,7 @@
             "param": {
                 "template": [
                     "scratch_sprits/research.png",
+                    "scratch_sprits/research_pink.png",
                     "scratch_sprits/research_pink_big.png",
                     "scratch_sprits/research_mid.png"
                 ],"threshold": 0.6
@@ -2325,8 +2330,10 @@
             "param": {
                 "template": [
                     "scratch_sprits/music2.png",
+                    "scratch_sprits/music2_blue.png",
                     "scratch_sprits/music2_pink.png"
                 ],"threshold": 0.6
+                ,"order_by":"Score"
             }
         },
         "action": {
@@ -2433,8 +2440,10 @@
             "param": {
                 "template": [
                     "scratch_sprits/music2.png",
+                    "scratch_sprits/music2_blue.png",
                     "scratch_sprits/music2_pink.png"
                 ],"threshold": 0.6
+                ,"order_by":"Score"
             }
         },
         "action": {
